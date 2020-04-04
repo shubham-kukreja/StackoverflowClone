@@ -12,9 +12,9 @@ class Index extends Component {
   render() {
     return (
       <Layout>
-        <Button type="submit" className="mb-2">
+        <Button type="submit" className="mb-2 floating-btn">
           <Link href="/AddQuestion" as={`/add-question`}>
-            <a className="nav-link text-white">Ask Question</a>
+            <a className="nav-link text-white">Ask Questions</a>
           </Link>
         </Button>
         {this.state.questions.map((item) => (

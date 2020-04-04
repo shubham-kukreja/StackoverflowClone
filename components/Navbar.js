@@ -1,5 +1,6 @@
 import { Navbar, Button } from "react-bootstrap";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function MainNavbar() {
   return (
@@ -13,9 +14,10 @@ export default function MainNavbar() {
         />
       </Head>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">StackOverflow</Navbar.Brand>
+        <div className="container">
+          <Navbar.Brand><Link href="/"><a className="nav-link text-white">StackOverflow</a></Link></Navbar.Brand>
+        </div>
       </Navbar>
     </>
   );
 }
-

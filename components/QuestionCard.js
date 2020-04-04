@@ -9,11 +9,15 @@ const PostLink = (props) => (
 
 export default function QuestionCard(props) {
   return (
-    <Card className="mb-3">
+    <Card>
       <Card.Body>
-        <Card.Title>{props.question.title}</Card.Title>
-        <Card.Text>{props.question.body} </Card.Text>
-        <PostLink qid={props.question.id}>Answers</PostLink>
+        <div className="card-col-2">
+          <Card.Title>{props.question.title}</Card.Title>
+          <Card.Text>{props.question.body} </Card.Text>
+          <PostLink className="post-link" qid={props.question.id}>
+            View Details > 
+          </PostLink>
+        </div>
       </Card.Body>
     </Card>
   );

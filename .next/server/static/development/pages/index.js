@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -154,9 +154,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\skukr\\Desktop\\redcarpet\\stackoverflow-react-next\\components\\Navbar.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 function MainNavbar() {
@@ -164,7 +167,7 @@ function MainNavbar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 8,
       columnNumber: 7
     }
   }, __jsx("link", {
@@ -175,7 +178,7 @@ function MainNavbar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 9,
       columnNumber: 9
     }
   })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"], {
@@ -184,18 +187,41 @@ function MainNavbar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 16,
       columnNumber: 7
     }
-  }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Brand, {
-    href: "#home",
+  }, __jsx("div", {
+    className: "container",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 17,
       columnNumber: 9
     }
-  }, "StackOverflow")));
+  }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Brand, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 11
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 25
+    }
+  }, __jsx("a", {
+    className: "nav-link text-white",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 40
+    }
+  }, "StackOverflow"))))));
 }
 
 /***/ }),
@@ -243,7 +269,6 @@ const PostLink = props => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a
 
 function QuestionCard(props) {
   return __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-    className: "mb-3",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -257,29 +282,38 @@ function QuestionCard(props) {
       lineNumber: 13,
       columnNumber: 7
     }
-  }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, {
+  }, __jsx("div", {
+    className: "card-col-2",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14,
       columnNumber: 9
     }
-  }, props.question.title), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, {
+  }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15,
-      columnNumber: 9
+      columnNumber: 11
     }
-  }, props.question.body, " "), __jsx(PostLink, {
-    qid: props.question.id,
+  }, props.question.title), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16,
-      columnNumber: 9
+      columnNumber: 11
     }
-  }, "Answers")));
+  }, props.question.body, " "), __jsx(PostLink, {
+    className: "post-link",
+    qid: props.question.id,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 11
+    }
+  }, "View Details >"))));
 }
 
 /***/ }),
@@ -294,222 +328,217 @@ function QuestionCard(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ([{
-  "id": 1023,
-  "title": "Noma here again with a question",
-  "body": "I am Noma Jerde and I have so many questions",
-  "like_count": 0,
-  "created_at": "2019-01-17T23:05:21.255Z",
-  "updated_at": "2019-01-17T23:05:21.255Z",
-  "view_count": 49,
-  "author": {
-    "id": 61,
-    "first_name": "Noma",
-    "last_name": "Jerde",
-    "full_name": "Noma Jerde",
-    "created_at": "2019-01-17T21:46:15.135Z",
-    "updated_at": "2019-01-17T21:46:15.135Z"
+  id: 1023,
+  title: "NextJS: getInitialProps method",
+  body: "I want use NextJS with firebase cloud functions and I am creating a cloud function: import * as functions from 'firebase-functions'; import cors from 'cors'; import express from 'express'; import … = functions.https.onRequest(nextApp); NextJS create a folder with the build of my JS app. The problem is that I can't upload on the cloud the NextJS build folder. How I can include this folder? GitHub Issue => https://github.com/zeit/next.js/issues/2017",
+  like_count: 0,
+  created_at: "2019-01-17T23:05:21.255Z",
+  updated_at: "2019-01-17T23:05:21.255Z",
+  author: {
+    id: 61,
+    full_name: "Noma Jerde",
+    created_at: "2019-01-17T21:46:15.135Z",
+    updated_at: "2019-01-17T21:46:15.135Z"
   },
-  "answers": []
+  tags: ["javascript", "reactjs", "nextjs"],
+  answers: []
 }, {
-  "id": 898,
-  "title": "If we synthesize the port, we can get to the GB capacitor through the solid state ADP microchip!",
-  "body": "The class object inherits from Chuck Norris.",
-  "like_count": 8,
-  "created_at": "2018-12-30T00:00:00.000Z",
-  "updated_at": "2018-12-30T00:00:00.000Z",
-  "view_count": 16887,
-  "author": {
-    "id": 69,
-    "first_name": "Valentine",
-    "last_name": "Altenwerth",
-    "full_name": "Valentine Altenwerth",
-    "created_at": "2019-01-17T21:46:15.638Z",
-    "updated_at": "2019-01-17T21:46:15.638Z"
+  id: 898,
+  title: "NextJS: getInitialProps method",
+  body: "I want use NextJS with firebase cloud functions and I am creating a cloud function: import * as functions from 'firebase-functions'; import cors from 'cors'; import express from 'express'; import … = functions.https.onRequest(nextApp); NextJS create a folder with the build of my JS app. The problem is that I can't upload on the cloud the NextJS build folder. How I can include this folder? GitHub Issue => https://github.com/zeit/next.js/issues/2017",
+  like_count: 8,
+  created_at: "2018-12-30T00:00:00.000Z",
+  updated_at: "2018-12-30T00:00:00.000Z",
+  author: {
+    id: 69,
+    full_name: "Valentine Altenwerth",
+    created_at: "2019-01-17T21:46:15.638Z",
+    updated_at: "2019-01-17T21:46:15.638Z"
   },
-  "answers": [{
-    "id": 5089,
-    "upvotes": 25,
-    "body": "Control thy passions lest they take vengence on thee.",
-    "created_at": "2019-01-17T21:46:18.492Z",
-    "updated_at": "2019-01-17T21:46:18.492Z",
-    "answerer": {
-      "id": 67,
-      "first_name": "Kenneth",
-      "last_name": "Gottlieb",
-      "full_name": "Kenneth Gottlieb",
-      "created_at": "2019-01-17T21:46:15.480Z",
-      "updated_at": "2019-01-17T21:46:15.480Z"
+  tags: ["javascript", "reactjs", "nextjs"],
+  answers: [{
+    id: 5089,
+    upvotes: 25,
+    body: "GetInitialProps is usually an async function which is good for asynchronous operations at the server and then it passes data to the page as props. It can run both on the server and on the browser(if you use Link for example). My conclusion would be to use getInitialProps to fetch data when your component acts as a Page, and you want to provide the data as Props.",
+    created_at: "2019-01-17T21:46:18.492Z",
+    updated_at: "2019-01-17T21:46:18.492Z",
+    answerer: {
+      id: 67,
+      full_name: "Kenneth Gottlieb",
+      created_at: "2019-01-17T21:46:15.480Z",
+      updated_at: "2019-01-17T21:46:15.480Z"
     }
   }, {
-    "id": 5088,
-    "upvotes": 25,
-    "body": "The unexamined life is not worth living.",
-    "created_at": "2019-01-17T21:46:18.491Z",
-    "updated_at": "2019-01-17T21:46:18.491Z",
-    "answerer": {
-      "id": 63,
-      "first_name": "Azalee",
-      "last_name": "Dietrich",
-      "full_name": "Azalee Dietrich",
-      "created_at": "2019-01-17T21:46:15.249Z",
-      "updated_at": "2019-01-17T21:46:15.249Z"
+    id: 5088,
+    upvotes: 15,
+    body: "The unexamined life is not worth living.",
+    created_at: "2019-01-17T21:46:18.491Z",
+    updated_at: "2019-01-17T21:46:18.491Z",
+    answerer: {
+      id: 63,
+      first_name: "Azalee",
+      last_name: "Dietrich",
+      full_name: "Azalee Dietrich",
+      created_at: "2019-01-17T21:46:15.249Z",
+      updated_at: "2019-01-17T21:46:15.249Z"
     }
   }, {
-    "id": 5087,
-    "upvotes": 25,
-    "body": "Know how to listen, and you will profit even from those who talk badly.",
-    "created_at": "2019-01-17T21:46:18.489Z",
-    "updated_at": "2019-01-17T21:46:18.489Z",
-    "answerer": {
-      "id": 59,
-      "first_name": "Jon",
-      "last_name": "Snow",
-      "full_name": "Jon Snow",
-      "created_at": "2019-01-17T21:46:14.923Z",
-      "updated_at": "2019-01-17T21:46:14.923Z"
+    id: 5087,
+    upvotes: 12,
+    body: "Know how to listen, and you will profit even from those who talk badly.",
+    created_at: "2019-01-17T21:46:18.489Z",
+    updated_at: "2019-01-17T21:46:18.489Z",
+    answerer: {
+      id: 59,
+      first_name: "Jon",
+      last_name: "Snow",
+      full_name: "Jon Snow",
+      created_at: "2019-01-17T21:46:14.923Z",
+      updated_at: "2019-01-17T21:46:14.923Z"
     }
   }, {
-    "id": 5086,
-    "upvotes": 25,
-    "body": "Control thy passions lest they take vengence on thee.",
-    "created_at": "2019-01-17T21:46:18.488Z",
-    "updated_at": "2019-01-17T21:46:18.488Z",
-    "answerer": {
-      "id": 67,
-      "first_name": "Kenneth",
-      "last_name": "Gottlieb",
-      "full_name": "Kenneth Gottlieb",
-      "created_at": "2019-01-17T21:46:15.480Z",
-      "updated_at": "2019-01-17T21:46:15.480Z"
+    id: 5086,
+    upvotes: 10,
+    body: "Control thy passions lest they take vengence on thee.",
+    created_at: "2019-01-17T21:46:18.488Z",
+    updated_at: "2019-01-17T21:46:18.488Z",
+    answerer: {
+      id: 67,
+      first_name: "Kenneth",
+      last_name: "Gottlieb",
+      full_name: "Kenneth Gottlieb",
+      created_at: "2019-01-17T21:46:15.480Z",
+      updated_at: "2019-01-17T21:46:15.480Z"
     }
   }]
 }, {
-  "id": 833,
-  "title": "Quantifying the matrix won't do anything, we need to index the virtual com interface!",
-  "body": "Chuck Norris' programs occupy 150% of CPU, even when they are not executing.",
-  "like_count": 2,
-  "created_at": "2018-12-21T00:00:00.000Z",
-  "updated_at": "2018-12-21T00:00:00.000Z",
-  "view_count": 59777,
-  "author": {
-    "id": 62,
-    "first_name": "Rebekah",
-    "last_name": "Hane",
-    "full_name": "Rebekah Hane",
-    "created_at": "2019-01-17T21:46:15.193Z",
-    "updated_at": "2019-01-17T21:46:15.193Z"
+  id: 833,
+  title: "Quantifying the matrix won't do anything, we need to index the virtual com interface!",
+  body: "Chuck Norris' programs occupy 150% of CPU, even when they are not executing.",
+  like_count: 2,
+  created_at: "2018-12-21T00:00:00.000Z",
+  updated_at: "2018-12-21T00:00:00.000Z",
+  view_count: 59777,
+  author: {
+    id: 62,
+    first_name: "Rebekah",
+    last_name: "Hane",
+    full_name: "Rebekah Hane",
+    created_at: "2019-01-17T21:46:15.193Z",
+    updated_at: "2019-01-17T21:46:15.193Z"
   },
-  "answers": [{
-    "id": 4630,
-    "upvotes": 25,
-    "body": "A few vices are sufficient to darken many virtues.",
-    "created_at": "2019-01-17T21:46:16.340Z",
-    "updated_at": "2019-01-17T21:46:16.340Z",
-    "answerer": {
-      "id": 66,
-      "first_name": "Michael",
-      "last_name": "Goldner",
-      "full_name": "Michael Goldner",
-      "created_at": "2019-01-17T21:46:15.422Z",
-      "updated_at": "2019-01-17T21:46:15.422Z"
+  tags: ["javascript", "reactjs", "nextjs"],
+  answers: [{
+    id: 4630,
+    upvotes: 25,
+    body: "A few vices are sufficient to darken many virtues.",
+    created_at: "2019-01-17T21:46:16.340Z",
+    updated_at: "2019-01-17T21:46:16.340Z",
+    answerer: {
+      id: 66,
+      first_name: "Michael",
+      last_name: "Goldner",
+      full_name: "Michael Goldner",
+      created_at: "2019-01-17T21:46:15.422Z",
+      updated_at: "2019-01-17T21:46:15.422Z"
     }
   }, {
-    "id": 4629,
-    "upvotes": 25,
-    "body": "There was never a genius without a tincture of madness.",
-    "created_at": "2019-01-17T21:46:16.337Z",
-    "updated_at": "2019-01-17T21:46:16.337Z",
-    "answerer": {
-      "id": 61,
-      "first_name": "Noma",
-      "last_name": "Jerde",
-      "full_name": "Noma Jerde",
-      "created_at": "2019-01-17T21:46:15.135Z",
-      "updated_at": "2019-01-17T21:46:15.135Z"
+    id: 4629,
+    upvotes: 25,
+    body: "There was never a genius without a tincture of madness.",
+    created_at: "2019-01-17T21:46:16.337Z",
+    updated_at: "2019-01-17T21:46:16.337Z",
+    answerer: {
+      id: 61,
+      first_name: "Noma",
+      last_name: "Jerde",
+      full_name: "Noma Jerde",
+      created_at: "2019-01-17T21:46:15.135Z",
+      updated_at: "2019-01-17T21:46:15.135Z"
     }
   }, {
-    "id": 4628,
-    "upvotes": 25,
-    "body": "Love is composed of a single soul inhabiting two bodies.",
-    "created_at": "2019-01-17T21:46:16.336Z",
-    "updated_at": "2019-01-17T21:46:16.336Z",
-    "answerer": {
-      "id": 61,
-      "first_name": "Noma",
-      "last_name": "Jerde",
-      "full_name": "Noma Jerde",
-      "created_at": "2019-01-17T21:46:15.135Z",
-      "updated_at": "2019-01-17T21:46:15.135Z"
+    id: 4628,
+    upvotes: 25,
+    body: "Love is composed of a single soul inhabiting two bodies.",
+    created_at: "2019-01-17T21:46:16.336Z",
+    updated_at: "2019-01-17T21:46:16.336Z",
+    answerer: {
+      id: 61,
+      first_name: "Noma",
+      last_name: "Jerde",
+      full_name: "Noma Jerde",
+      created_at: "2019-01-17T21:46:15.135Z",
+      updated_at: "2019-01-17T21:46:15.135Z"
     }
   }, {
-    "id": 4627,
-    "upvotes": 25,
-    "body": "It is impossible to begin to learn that which one thinks one already knows.",
-    "created_at": "2019-01-17T21:46:16.334Z",
-    "updated_at": "2019-01-17T21:46:16.334Z",
-    "answerer": {
-      "id": 64,
-      "first_name": "Cleveland",
-      "last_name": "Wunsch",
-      "full_name": "Cleveland Wunsch",
-      "created_at": "2019-01-17T21:46:15.307Z",
-      "updated_at": "2019-01-17T21:46:15.307Z"
+    id: 4627,
+    upvotes: 25,
+    body: "It is impossible to begin to learn that which one thinks one already knows.",
+    created_at: "2019-01-17T21:46:16.334Z",
+    updated_at: "2019-01-17T21:46:16.334Z",
+    answerer: {
+      id: 64,
+      first_name: "Cleveland",
+      last_name: "Wunsch",
+      full_name: "Cleveland Wunsch",
+      created_at: "2019-01-17T21:46:15.307Z",
+      updated_at: "2019-01-17T21:46:15.307Z"
     }
   }, {
-    "id": 4626,
-    "upvotes": 25,
-    "body": "Beware the barrenness of a busy life.",
-    "created_at": "2019-01-17T21:46:16.332Z",
-    "updated_at": "2019-01-17T21:46:16.332Z",
-    "answerer": {
-      "id": 62,
-      "first_name": "Rebekah",
-      "last_name": "Hane",
-      "full_name": "Rebekah Hane",
-      "created_at": "2019-01-17T21:46:15.193Z",
-      "updated_at": "2019-01-17T21:46:15.193Z"
+    id: 4626,
+    upvotes: 25,
+    body: "Beware the barrenness of a busy life.",
+    created_at: "2019-01-17T21:46:16.332Z",
+    updated_at: "2019-01-17T21:46:16.332Z",
+    answerer: {
+      id: 62,
+      first_name: "Rebekah",
+      last_name: "Hane",
+      full_name: "Rebekah Hane",
+      created_at: "2019-01-17T21:46:15.193Z",
+      updated_at: "2019-01-17T21:46:15.193Z"
     }
   }, {
-    "id": 4625,
-    "upvotes": 25,
-    "body": "Pleasure in the job puts perfection in the work.",
-    "created_at": "2019-01-17T21:46:16.331Z",
-    "updated_at": "2019-01-17T21:46:16.331Z",
-    "answerer": {
-      "id": 69,
-      "first_name": "Valentine",
-      "last_name": "Altenwerth",
-      "full_name": "Valentine Altenwerth",
-      "created_at": "2019-01-17T21:46:15.638Z",
-      "updated_at": "2019-01-17T21:46:15.638Z"
+    id: 4625,
+    upvotes: 25,
+    body: "Pleasure in the job puts perfection in the work.",
+    created_at: "2019-01-17T21:46:16.331Z",
+    updated_at: "2019-01-17T21:46:16.331Z",
+    answerer: {
+      id: 69,
+      first_name: "Valentine",
+      last_name: "Altenwerth",
+      full_name: "Valentine Altenwerth",
+      created_at: "2019-01-17T21:46:15.638Z",
+      updated_at: "2019-01-17T21:46:15.638Z"
     }
   }, {
-    "id": 4624,
-    "upvotes": 25,
-    "body": "Control thy passions lest they take vengence on thee.",
-    "created_at": "2019-01-17T21:46:16.329Z",
-    "updated_at": "2019-01-17T21:46:16.329Z",
-    "answerer": {
-      "id": 59,
-      "first_name": "Jon",
-      "last_name": "Snow",
-      "full_name": "Jon Snow",
-      "created_at": "2019-01-17T21:46:14.923Z",
-      "updated_at": "2019-01-17T21:46:14.923Z"
+    id: 4624,
+    upvotes: 25,
+    body: "Control thy passions lest they take vengence on thee.",
+    created_at: "2019-01-17T21:46:16.329Z",
+    updated_at: "2019-01-17T21:46:16.329Z",
+    answerer: {
+      id: 59,
+      first_name: "Jon",
+      last_name: "Snow",
+      full_name: "Jon Snow",
+      created_at: "2019-01-17T21:46:14.923Z",
+      updated_at: "2019-01-17T21:46:14.923Z"
     }
   }, {
-    "id": 4623,
-    "upvotes": 25,
-    "body": "Good habits formed at youth make all the difference.",
-    "created_at": "2019-01-17T21:46:16.327Z",
-    "updated_at": "2019-01-17T21:46:16.327Z",
-    "answerer": {
-      "id": 63,
-      "first_name": "Azalee",
-      "last_name": "Dietrich",
-      "full_name": "Azalee Dietrich",
-      "created_at": "2019-01-17T21:46:15.249Z",
-      "updated_at": "2019-01-17T21:46:15.249Z"
+    id: 4623,
+    upvotes: 25,
+    body: "Good habits formed at youth make all the difference.",
+    created_at: "2019-01-17T21:46:16.327Z",
+    updated_at: "2019-01-17T21:46:16.327Z",
+    answerer: {
+      id: 63,
+      first_name: "Azalee",
+      last_name: "Dietrich",
+      full_name: "Azalee Dietrich",
+      created_at: "2019-01-17T21:46:15.249Z",
+      updated_at: "2019-01-17T21:46:15.249Z"
     }
   }]
 }]);
@@ -2240,7 +2269,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       }
     }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
       type: "submit",
-      className: "mb-2",
+      className: "mb-2 floating-btn",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -2264,7 +2293,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 17,
         columnNumber: 13
       }
-    }, "Ask Question"))), this.state.questions.map(item => __jsx(_components_QuestionCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }, "Ask Questions"))), this.state.questions.map(item => __jsx(_components_QuestionCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       question: item,
       key: item.id,
       __self: this,
@@ -2282,7 +2311,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

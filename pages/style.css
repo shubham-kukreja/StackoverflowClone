@@ -1,0 +1,61 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Index Starts Here */
+.floating-btn {
+  position: absolute;
+  bottom: 50px;
+  right: 300px;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  box-shadow: 0 5px 80px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out !important;
+}
+.floating-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 80px rgba(0, 0, 0, 0.16);
+}
+/* Index Ends Here */
+
+/* Question Card Starts */
+.card {
+  border: none;
+  box-shadow: 0 5px 80px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out !important;
+  padding: 0px 0px;
+  margin: 20px 0;
+}
+.card-body {
+  padding: 20px 40px;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 80px rgba(0, 0, 0, 0.16);
+}
+.nav-link {
+  padding: 0;
+}
+.post-link {
+  display: inline-block;
+}
+/* Question Card Ends */
+
+/* Question Detail Starts Here */
+.question-heading {
+    margin-bottom: 25px;
+}
+.question-body {
+    font-weight: 400;
+}
+.upvote {
+    background-color: #007bff;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+/* Question Detail Ends Here */
+/* Answer Starts Here */
+
+/* Answer Ends Here */

@@ -24,15 +24,18 @@ class QuestionDetail extends Component {
     return (
       <>
         {data ? (
-          <div className="container">
-            <h1>{data.title}</h1>
-            <p>{data.body}</p>
-            <p>Total Answers : {answerCount}</p>
+          <>
+            <h1 className="question-heading">{data.title}</h1>
+            <hr/>
+            <h5 className="question-body">{data.body}</h5>
+            <hr/>
+            <p className="lead">{answerCount} Answers &nbsp;&nbsp;&nbsp;&nbsp;<span className="upvote" onClick={() => console.log('upvoted')}>&uarr;</span>&nbsp;Likes {data.like_count}</p>
+            <hr/>
+            <br/>
             {data.answers.map((ans) => (
               <Answer data={ans} key={ans.id} />
             ))}
-            <PostAnswer />
-          </div>
+          </>
         ) : (
           <div className="center text-center">
             <Spinner animation="border" />

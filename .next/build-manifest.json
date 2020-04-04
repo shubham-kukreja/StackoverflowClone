@@ -12,6 +12,14 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+    "/AddQuestion": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/MyEditor": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/_app": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
@@ -25,6 +33,10 @@
       "static/runtime/polyfills.js.map"
     ],
     "/index": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],

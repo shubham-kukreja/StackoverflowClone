@@ -20,9 +20,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function Answer(props) {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(react_bootstrap_Jumbotron__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    fluid: true,
-    className: "p-2 mb-2 mu-2",
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+    className: "row answer-row",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -30,45 +29,51 @@ function Answer(props) {
       columnNumber: 7
     }
   }, __jsx("div", {
-    className: "container-fluid",
+    className: "col-md-1",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7,
       columnNumber: 9
     }
-  }, __jsx("div", {
-    className: "row",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8,
-      columnNumber: 11
-    }
-  }, __jsx("div", {
-    className: "col-md-10",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 13
-    }
-  }, props.data.body), __jsx("div", {
-    className: "col-md-2",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10,
-      columnNumber: 13
-    }
   }, props.data.upvotes, "\xA0\xA0\xA0", __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 15
+      lineNumber: 9,
+      columnNumber: 11
     }
-  }, "+"))), __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "- ", props.data.answerer.full_name))));
+  }, "\u2191")), __jsx("div", {
+    className: "col-md-11",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    className: "content",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 36
+    }
+  }, props.data.body), " - ", props.data.answerer.full_name)), __jsx("br", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 7
+    }
+  }), __jsx("hr", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 7
+    }
+  }));
 }
 
 /***/ }),
@@ -133,9 +138,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\skukr\\Desktop\\redcarpet\\stackoverflow-react-next\\components\\Navbar.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 function MainNavbar() {
@@ -143,7 +151,7 @@ function MainNavbar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 8,
       columnNumber: 7
     }
   }, __jsx("link", {
@@ -154,7 +162,7 @@ function MainNavbar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 9,
       columnNumber: 9
     }
   })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"], {
@@ -163,18 +171,41 @@ function MainNavbar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 16,
       columnNumber: 7
     }
-  }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Brand, {
-    href: "#home",
+  }, __jsx("div", {
+    className: "container",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 17,
       columnNumber: 9
     }
-  }, "StackOverflow")));
+  }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Brand, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 11
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 25
+    }
+  }, __jsx("a", {
+    className: "nav-link text-white",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 40
+    }
+  }, "StackOverflow"))))));
 }
 
 /***/ }),
@@ -385,59 +416,86 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
       var _this$state = this.state,
           data = _this$state.data,
           answerCount = _this$state.answerCount;
-      return __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, data ? __jsx("div", {
-        className: "container",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 27,
-          columnNumber: 11
-        }
-      }, __jsx("h1", {
+      return __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, data ? __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx("h1", {
+        className: "question-heading",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 28,
           columnNumber: 13
         }
-      }, data.title), __jsx("p", {
+      }, data.title), __jsx("hr", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 29,
           columnNumber: 13
         }
-      }, data.body), __jsx("p", {
+      }), __jsx("h5", {
+        className: "question-body",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 30,
           columnNumber: 13
         }
-      }, "Total Answers : ", answerCount), data.answers.map(function (ans) {
-        return __jsx(_Answer__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          data: ans,
-          key: ans.id,
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 32,
-            columnNumber: 15
-          }
-        });
-      }), __jsx(_PostAnswer__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      }, data.body), __jsx("hr", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31,
+          columnNumber: 13
+        }
+      }), __jsx("p", {
+        className: "lead",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32,
+          columnNumber: 13
+        }
+      }, answerCount, " Answers \xA0\xA0\xA0\xA0", __jsx("span", {
+        className: "upvote",
+        onClick: function onClick() {
+          return console.log('upvoted');
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32,
+          columnNumber: 79
+        }
+      }, "\u2191"), "\xA0Likes ", data.like_count), __jsx("hr", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33,
+          columnNumber: 13
+        }
+      }), __jsx("br", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 34,
           columnNumber: 13
         }
+      }), data.answers.map(function (ans) {
+        return __jsx(_Answer__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          data: ans,
+          key: ans.id,
+          __self: _this3,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 15
+          }
+        });
       })) : __jsx("div", {
         className: "center text-center",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37,
+          lineNumber: 40,
           columnNumber: 11
         }
       }, __jsx(react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -445,7 +503,7 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38,
+          lineNumber: 41,
           columnNumber: 13
         }
       })));
@@ -469,222 +527,217 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ([{
-  "id": 1023,
-  "title": "Noma here again with a question",
-  "body": "I am Noma Jerde and I have so many questions",
-  "like_count": 0,
-  "created_at": "2019-01-17T23:05:21.255Z",
-  "updated_at": "2019-01-17T23:05:21.255Z",
-  "view_count": 49,
-  "author": {
-    "id": 61,
-    "first_name": "Noma",
-    "last_name": "Jerde",
-    "full_name": "Noma Jerde",
-    "created_at": "2019-01-17T21:46:15.135Z",
-    "updated_at": "2019-01-17T21:46:15.135Z"
+  id: 1023,
+  title: "NextJS: getInitialProps method",
+  body: "I want use NextJS with firebase cloud functions and I am creating a cloud function: import * as functions from 'firebase-functions'; import cors from 'cors'; import express from 'express'; import … = functions.https.onRequest(nextApp); NextJS create a folder with the build of my JS app. The problem is that I can't upload on the cloud the NextJS build folder. How I can include this folder? GitHub Issue => https://github.com/zeit/next.js/issues/2017",
+  like_count: 0,
+  created_at: "2019-01-17T23:05:21.255Z",
+  updated_at: "2019-01-17T23:05:21.255Z",
+  author: {
+    id: 61,
+    full_name: "Noma Jerde",
+    created_at: "2019-01-17T21:46:15.135Z",
+    updated_at: "2019-01-17T21:46:15.135Z"
   },
-  "answers": []
+  tags: ["javascript", "reactjs", "nextjs"],
+  answers: []
 }, {
-  "id": 898,
-  "title": "If we synthesize the port, we can get to the GB capacitor through the solid state ADP microchip!",
-  "body": "The class object inherits from Chuck Norris.",
-  "like_count": 8,
-  "created_at": "2018-12-30T00:00:00.000Z",
-  "updated_at": "2018-12-30T00:00:00.000Z",
-  "view_count": 16887,
-  "author": {
-    "id": 69,
-    "first_name": "Valentine",
-    "last_name": "Altenwerth",
-    "full_name": "Valentine Altenwerth",
-    "created_at": "2019-01-17T21:46:15.638Z",
-    "updated_at": "2019-01-17T21:46:15.638Z"
+  id: 898,
+  title: "NextJS: getInitialProps method",
+  body: "I want use NextJS with firebase cloud functions and I am creating a cloud function: import * as functions from 'firebase-functions'; import cors from 'cors'; import express from 'express'; import … = functions.https.onRequest(nextApp); NextJS create a folder with the build of my JS app. The problem is that I can't upload on the cloud the NextJS build folder. How I can include this folder? GitHub Issue => https://github.com/zeit/next.js/issues/2017",
+  like_count: 8,
+  created_at: "2018-12-30T00:00:00.000Z",
+  updated_at: "2018-12-30T00:00:00.000Z",
+  author: {
+    id: 69,
+    full_name: "Valentine Altenwerth",
+    created_at: "2019-01-17T21:46:15.638Z",
+    updated_at: "2019-01-17T21:46:15.638Z"
   },
-  "answers": [{
-    "id": 5089,
-    "upvotes": 25,
-    "body": "Control thy passions lest they take vengence on thee.",
-    "created_at": "2019-01-17T21:46:18.492Z",
-    "updated_at": "2019-01-17T21:46:18.492Z",
-    "answerer": {
-      "id": 67,
-      "first_name": "Kenneth",
-      "last_name": "Gottlieb",
-      "full_name": "Kenneth Gottlieb",
-      "created_at": "2019-01-17T21:46:15.480Z",
-      "updated_at": "2019-01-17T21:46:15.480Z"
+  tags: ["javascript", "reactjs", "nextjs"],
+  answers: [{
+    id: 5089,
+    upvotes: 25,
+    body: "GetInitialProps is usually an async function which is good for asynchronous operations at the server and then it passes data to the page as props. It can run both on the server and on the browser(if you use Link for example). My conclusion would be to use getInitialProps to fetch data when your component acts as a Page, and you want to provide the data as Props.",
+    created_at: "2019-01-17T21:46:18.492Z",
+    updated_at: "2019-01-17T21:46:18.492Z",
+    answerer: {
+      id: 67,
+      full_name: "Kenneth Gottlieb",
+      created_at: "2019-01-17T21:46:15.480Z",
+      updated_at: "2019-01-17T21:46:15.480Z"
     }
   }, {
-    "id": 5088,
-    "upvotes": 25,
-    "body": "The unexamined life is not worth living.",
-    "created_at": "2019-01-17T21:46:18.491Z",
-    "updated_at": "2019-01-17T21:46:18.491Z",
-    "answerer": {
-      "id": 63,
-      "first_name": "Azalee",
-      "last_name": "Dietrich",
-      "full_name": "Azalee Dietrich",
-      "created_at": "2019-01-17T21:46:15.249Z",
-      "updated_at": "2019-01-17T21:46:15.249Z"
+    id: 5088,
+    upvotes: 15,
+    body: "The unexamined life is not worth living.",
+    created_at: "2019-01-17T21:46:18.491Z",
+    updated_at: "2019-01-17T21:46:18.491Z",
+    answerer: {
+      id: 63,
+      first_name: "Azalee",
+      last_name: "Dietrich",
+      full_name: "Azalee Dietrich",
+      created_at: "2019-01-17T21:46:15.249Z",
+      updated_at: "2019-01-17T21:46:15.249Z"
     }
   }, {
-    "id": 5087,
-    "upvotes": 25,
-    "body": "Know how to listen, and you will profit even from those who talk badly.",
-    "created_at": "2019-01-17T21:46:18.489Z",
-    "updated_at": "2019-01-17T21:46:18.489Z",
-    "answerer": {
-      "id": 59,
-      "first_name": "Jon",
-      "last_name": "Snow",
-      "full_name": "Jon Snow",
-      "created_at": "2019-01-17T21:46:14.923Z",
-      "updated_at": "2019-01-17T21:46:14.923Z"
+    id: 5087,
+    upvotes: 12,
+    body: "Know how to listen, and you will profit even from those who talk badly.",
+    created_at: "2019-01-17T21:46:18.489Z",
+    updated_at: "2019-01-17T21:46:18.489Z",
+    answerer: {
+      id: 59,
+      first_name: "Jon",
+      last_name: "Snow",
+      full_name: "Jon Snow",
+      created_at: "2019-01-17T21:46:14.923Z",
+      updated_at: "2019-01-17T21:46:14.923Z"
     }
   }, {
-    "id": 5086,
-    "upvotes": 25,
-    "body": "Control thy passions lest they take vengence on thee.",
-    "created_at": "2019-01-17T21:46:18.488Z",
-    "updated_at": "2019-01-17T21:46:18.488Z",
-    "answerer": {
-      "id": 67,
-      "first_name": "Kenneth",
-      "last_name": "Gottlieb",
-      "full_name": "Kenneth Gottlieb",
-      "created_at": "2019-01-17T21:46:15.480Z",
-      "updated_at": "2019-01-17T21:46:15.480Z"
+    id: 5086,
+    upvotes: 10,
+    body: "Control thy passions lest they take vengence on thee.",
+    created_at: "2019-01-17T21:46:18.488Z",
+    updated_at: "2019-01-17T21:46:18.488Z",
+    answerer: {
+      id: 67,
+      first_name: "Kenneth",
+      last_name: "Gottlieb",
+      full_name: "Kenneth Gottlieb",
+      created_at: "2019-01-17T21:46:15.480Z",
+      updated_at: "2019-01-17T21:46:15.480Z"
     }
   }]
 }, {
-  "id": 833,
-  "title": "Quantifying the matrix won't do anything, we need to index the virtual com interface!",
-  "body": "Chuck Norris' programs occupy 150% of CPU, even when they are not executing.",
-  "like_count": 2,
-  "created_at": "2018-12-21T00:00:00.000Z",
-  "updated_at": "2018-12-21T00:00:00.000Z",
-  "view_count": 59777,
-  "author": {
-    "id": 62,
-    "first_name": "Rebekah",
-    "last_name": "Hane",
-    "full_name": "Rebekah Hane",
-    "created_at": "2019-01-17T21:46:15.193Z",
-    "updated_at": "2019-01-17T21:46:15.193Z"
+  id: 833,
+  title: "Quantifying the matrix won't do anything, we need to index the virtual com interface!",
+  body: "Chuck Norris' programs occupy 150% of CPU, even when they are not executing.",
+  like_count: 2,
+  created_at: "2018-12-21T00:00:00.000Z",
+  updated_at: "2018-12-21T00:00:00.000Z",
+  view_count: 59777,
+  author: {
+    id: 62,
+    first_name: "Rebekah",
+    last_name: "Hane",
+    full_name: "Rebekah Hane",
+    created_at: "2019-01-17T21:46:15.193Z",
+    updated_at: "2019-01-17T21:46:15.193Z"
   },
-  "answers": [{
-    "id": 4630,
-    "upvotes": 25,
-    "body": "A few vices are sufficient to darken many virtues.",
-    "created_at": "2019-01-17T21:46:16.340Z",
-    "updated_at": "2019-01-17T21:46:16.340Z",
-    "answerer": {
-      "id": 66,
-      "first_name": "Michael",
-      "last_name": "Goldner",
-      "full_name": "Michael Goldner",
-      "created_at": "2019-01-17T21:46:15.422Z",
-      "updated_at": "2019-01-17T21:46:15.422Z"
+  tags: ["javascript", "reactjs", "nextjs"],
+  answers: [{
+    id: 4630,
+    upvotes: 25,
+    body: "A few vices are sufficient to darken many virtues.",
+    created_at: "2019-01-17T21:46:16.340Z",
+    updated_at: "2019-01-17T21:46:16.340Z",
+    answerer: {
+      id: 66,
+      first_name: "Michael",
+      last_name: "Goldner",
+      full_name: "Michael Goldner",
+      created_at: "2019-01-17T21:46:15.422Z",
+      updated_at: "2019-01-17T21:46:15.422Z"
     }
   }, {
-    "id": 4629,
-    "upvotes": 25,
-    "body": "There was never a genius without a tincture of madness.",
-    "created_at": "2019-01-17T21:46:16.337Z",
-    "updated_at": "2019-01-17T21:46:16.337Z",
-    "answerer": {
-      "id": 61,
-      "first_name": "Noma",
-      "last_name": "Jerde",
-      "full_name": "Noma Jerde",
-      "created_at": "2019-01-17T21:46:15.135Z",
-      "updated_at": "2019-01-17T21:46:15.135Z"
+    id: 4629,
+    upvotes: 25,
+    body: "There was never a genius without a tincture of madness.",
+    created_at: "2019-01-17T21:46:16.337Z",
+    updated_at: "2019-01-17T21:46:16.337Z",
+    answerer: {
+      id: 61,
+      first_name: "Noma",
+      last_name: "Jerde",
+      full_name: "Noma Jerde",
+      created_at: "2019-01-17T21:46:15.135Z",
+      updated_at: "2019-01-17T21:46:15.135Z"
     }
   }, {
-    "id": 4628,
-    "upvotes": 25,
-    "body": "Love is composed of a single soul inhabiting two bodies.",
-    "created_at": "2019-01-17T21:46:16.336Z",
-    "updated_at": "2019-01-17T21:46:16.336Z",
-    "answerer": {
-      "id": 61,
-      "first_name": "Noma",
-      "last_name": "Jerde",
-      "full_name": "Noma Jerde",
-      "created_at": "2019-01-17T21:46:15.135Z",
-      "updated_at": "2019-01-17T21:46:15.135Z"
+    id: 4628,
+    upvotes: 25,
+    body: "Love is composed of a single soul inhabiting two bodies.",
+    created_at: "2019-01-17T21:46:16.336Z",
+    updated_at: "2019-01-17T21:46:16.336Z",
+    answerer: {
+      id: 61,
+      first_name: "Noma",
+      last_name: "Jerde",
+      full_name: "Noma Jerde",
+      created_at: "2019-01-17T21:46:15.135Z",
+      updated_at: "2019-01-17T21:46:15.135Z"
     }
   }, {
-    "id": 4627,
-    "upvotes": 25,
-    "body": "It is impossible to begin to learn that which one thinks one already knows.",
-    "created_at": "2019-01-17T21:46:16.334Z",
-    "updated_at": "2019-01-17T21:46:16.334Z",
-    "answerer": {
-      "id": 64,
-      "first_name": "Cleveland",
-      "last_name": "Wunsch",
-      "full_name": "Cleveland Wunsch",
-      "created_at": "2019-01-17T21:46:15.307Z",
-      "updated_at": "2019-01-17T21:46:15.307Z"
+    id: 4627,
+    upvotes: 25,
+    body: "It is impossible to begin to learn that which one thinks one already knows.",
+    created_at: "2019-01-17T21:46:16.334Z",
+    updated_at: "2019-01-17T21:46:16.334Z",
+    answerer: {
+      id: 64,
+      first_name: "Cleveland",
+      last_name: "Wunsch",
+      full_name: "Cleveland Wunsch",
+      created_at: "2019-01-17T21:46:15.307Z",
+      updated_at: "2019-01-17T21:46:15.307Z"
     }
   }, {
-    "id": 4626,
-    "upvotes": 25,
-    "body": "Beware the barrenness of a busy life.",
-    "created_at": "2019-01-17T21:46:16.332Z",
-    "updated_at": "2019-01-17T21:46:16.332Z",
-    "answerer": {
-      "id": 62,
-      "first_name": "Rebekah",
-      "last_name": "Hane",
-      "full_name": "Rebekah Hane",
-      "created_at": "2019-01-17T21:46:15.193Z",
-      "updated_at": "2019-01-17T21:46:15.193Z"
+    id: 4626,
+    upvotes: 25,
+    body: "Beware the barrenness of a busy life.",
+    created_at: "2019-01-17T21:46:16.332Z",
+    updated_at: "2019-01-17T21:46:16.332Z",
+    answerer: {
+      id: 62,
+      first_name: "Rebekah",
+      last_name: "Hane",
+      full_name: "Rebekah Hane",
+      created_at: "2019-01-17T21:46:15.193Z",
+      updated_at: "2019-01-17T21:46:15.193Z"
     }
   }, {
-    "id": 4625,
-    "upvotes": 25,
-    "body": "Pleasure in the job puts perfection in the work.",
-    "created_at": "2019-01-17T21:46:16.331Z",
-    "updated_at": "2019-01-17T21:46:16.331Z",
-    "answerer": {
-      "id": 69,
-      "first_name": "Valentine",
-      "last_name": "Altenwerth",
-      "full_name": "Valentine Altenwerth",
-      "created_at": "2019-01-17T21:46:15.638Z",
-      "updated_at": "2019-01-17T21:46:15.638Z"
+    id: 4625,
+    upvotes: 25,
+    body: "Pleasure in the job puts perfection in the work.",
+    created_at: "2019-01-17T21:46:16.331Z",
+    updated_at: "2019-01-17T21:46:16.331Z",
+    answerer: {
+      id: 69,
+      first_name: "Valentine",
+      last_name: "Altenwerth",
+      full_name: "Valentine Altenwerth",
+      created_at: "2019-01-17T21:46:15.638Z",
+      updated_at: "2019-01-17T21:46:15.638Z"
     }
   }, {
-    "id": 4624,
-    "upvotes": 25,
-    "body": "Control thy passions lest they take vengence on thee.",
-    "created_at": "2019-01-17T21:46:16.329Z",
-    "updated_at": "2019-01-17T21:46:16.329Z",
-    "answerer": {
-      "id": 59,
-      "first_name": "Jon",
-      "last_name": "Snow",
-      "full_name": "Jon Snow",
-      "created_at": "2019-01-17T21:46:14.923Z",
-      "updated_at": "2019-01-17T21:46:14.923Z"
+    id: 4624,
+    upvotes: 25,
+    body: "Control thy passions lest they take vengence on thee.",
+    created_at: "2019-01-17T21:46:16.329Z",
+    updated_at: "2019-01-17T21:46:16.329Z",
+    answerer: {
+      id: 59,
+      first_name: "Jon",
+      last_name: "Snow",
+      full_name: "Jon Snow",
+      created_at: "2019-01-17T21:46:14.923Z",
+      updated_at: "2019-01-17T21:46:14.923Z"
     }
   }, {
-    "id": 4623,
-    "upvotes": 25,
-    "body": "Good habits formed at youth make all the difference.",
-    "created_at": "2019-01-17T21:46:16.327Z",
-    "updated_at": "2019-01-17T21:46:16.327Z",
-    "answerer": {
-      "id": 63,
-      "first_name": "Azalee",
-      "last_name": "Dietrich",
-      "full_name": "Azalee Dietrich",
-      "created_at": "2019-01-17T21:46:15.249Z",
-      "updated_at": "2019-01-17T21:46:15.249Z"
+    id: 4623,
+    upvotes: 25,
+    body: "Good habits formed at youth make all the difference.",
+    created_at: "2019-01-17T21:46:16.327Z",
+    updated_at: "2019-01-17T21:46:16.327Z",
+    answerer: {
+      id: 63,
+      first_name: "Azalee",
+      last_name: "Dietrich",
+      full_name: "Azalee Dietrich",
+      created_at: "2019-01-17T21:46:15.249Z",
+      updated_at: "2019-01-17T21:46:15.249Z"
     }
   }]
 }]);
@@ -5254,6 +5307,104 @@ function transitionEnd(element, handler, duration) {
 
 /***/ }),
 
+/***/ "./node_modules/function-bind/implementation.js":
+/*!******************************************************!*\
+  !*** ./node_modules/function-bind/implementation.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/* eslint no-invalid-this: 1 */
+
+var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
+var slice = Array.prototype.slice;
+var toStr = Object.prototype.toString;
+var funcType = '[object Function]';
+
+module.exports = function bind(that) {
+    var target = this;
+    if (typeof target !== 'function' || toStr.call(target) !== funcType) {
+        throw new TypeError(ERROR_MESSAGE + target);
+    }
+    var args = slice.call(arguments, 1);
+
+    var bound;
+    var binder = function () {
+        if (this instanceof bound) {
+            var result = target.apply(
+                this,
+                args.concat(slice.call(arguments))
+            );
+            if (Object(result) === result) {
+                return result;
+            }
+            return this;
+        } else {
+            return target.apply(
+                that,
+                args.concat(slice.call(arguments))
+            );
+        }
+    };
+
+    var boundLength = Math.max(0, target.length - args.length);
+    var boundArgs = [];
+    for (var i = 0; i < boundLength; i++) {
+        boundArgs.push('$' + i);
+    }
+
+    bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
+
+    if (target.prototype) {
+        var Empty = function Empty() {};
+        Empty.prototype = target.prototype;
+        bound.prototype = new Empty();
+        Empty.prototype = null;
+    }
+
+    return bound;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/function-bind/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/function-bind/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var implementation = __webpack_require__(/*! ./implementation */ "./node_modules/function-bind/implementation.js");
+
+module.exports = Function.prototype.bind || implementation;
+
+
+/***/ }),
+
+/***/ "./node_modules/has/src/index.js":
+/*!***************************************!*\
+  !*** ./node_modules/has/src/index.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
+
+module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
+
+
+/***/ }),
+
 /***/ "./node_modules/invariant/browser.js":
 /*!*******************************************!*\
   !*** ./node_modules/invariant/browser.js ***!
@@ -5339,6 +5490,18 @@ module.exports = (__webpack_require__(/*! dll-reference dll_c2e10d183b950a67d9e7
 
 /***/ }),
 
+/***/ "./node_modules/next/dist/build/polyfills/object.assign/index.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/next/dist/build/polyfills/object.assign/index.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineProperties(g(),{implementation:{get:g},shim:{value:g},getPolyfill:{value:g}});module.exports=g();
+
+/***/ }),
+
 /***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fq%2F%5Bqid%5D&absolutePagePath=C%3A%5CUsers%5Cskukr%5CDesktop%5Credcarpet%5Cstackoverflow-react-next%5Cpages%5Cq%5C%5Bqid%5D.js!./":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fq%2F%5Bqid%5D&absolutePagePath=C%3A%5CUsers%5Cskukr%5CDesktop%5Credcarpet%5Cstackoverflow-react-next%5Cpages%5Cq%5C%5Bqid%5D.js ***!
@@ -5359,6 +5522,359 @@ module.exports = (__webpack_require__(/*! dll-reference dll_c2e10d183b950a67d9e7
       return mod
     }]);
   
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/client/link.js":
+/*!***********************************************!*\
+  !*** ./node_modules/next/dist/client/link.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _classCallCheck = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+
+var _createClass = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+
+var _possibleConstructorReturn = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+
+var _getPrototypeOf = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+
+var _inherits = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _url = __webpack_require__(/*! url */ "./node_modules/native-url/dist/index.js");
+
+var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
+
+var _router = _interopRequireDefault(__webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js"));
+
+function isLocal(href) {
+  var url = (0, _url.parse)(href, false, true);
+  var origin = (0, _url.parse)((0, _utils.getLocationOrigin)(), false, true);
+  return !url.host || url.protocol === origin.protocol && url.host === origin.host;
+}
+
+function memoizedFormatUrl(formatFunc) {
+  var lastHref = null;
+  var lastAs = null;
+  var lastResult = null;
+  return function (href, as) {
+    if (lastResult && href === lastHref && as === lastAs) {
+      return lastResult;
+    }
+
+    var result = formatFunc(href, as);
+    lastHref = href;
+    lastAs = as;
+    lastResult = result;
+    return result;
+  };
+}
+
+function formatUrl(url) {
+  return url && typeof url === 'object' ? (0, _utils.formatWithValidation)(url) : url;
+}
+
+var observer;
+var listeners = new Map();
+var IntersectionObserver = true ? window.IntersectionObserver : undefined;
+var prefetched = {};
+
+function getObserver() {
+  // Return shared instance of IntersectionObserver if already created
+  if (observer) {
+    return observer;
+  } // Only create shared IntersectionObserver if supported in browser
+
+
+  if (!IntersectionObserver) {
+    return undefined;
+  }
+
+  return observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!listeners.has(entry.target)) {
+        return;
+      }
+
+      var cb = listeners.get(entry.target);
+
+      if (entry.isIntersecting || entry.intersectionRatio > 0) {
+        observer.unobserve(entry.target);
+        listeners["delete"](entry.target);
+        cb();
+      }
+    });
+  }, {
+    rootMargin: '200px'
+  });
+}
+
+var listenToIntersections = function listenToIntersections(el, cb) {
+  var observer = getObserver();
+
+  if (!observer) {
+    return function () {};
+  }
+
+  observer.observe(el);
+  listeners.set(el, cb);
+  return function () {
+    try {
+      observer.unobserve(el);
+    } catch (err) {
+      console.error(err);
+    }
+
+    listeners["delete"](el);
+  };
+};
+
+var Link = /*#__PURE__*/function (_react$Component) {
+  _inherits(Link, _react$Component);
+
+  var _super = _createSuper(Link);
+
+  function Link(props) {
+    var _this;
+
+    _classCallCheck(this, Link);
+
+    _this = _super.call(this, props);
+    _this.p = void 0;
+
+    _this.cleanUpListeners = function () {};
+
+    _this.formatUrls = memoizedFormatUrl(function (href, asHref) {
+      return {
+        href: formatUrl(href),
+        as: asHref ? formatUrl(asHref) : asHref
+      };
+    });
+
+    _this.linkClicked = function (e) {
+      var _e$currentTarget = e.currentTarget,
+          nodeName = _e$currentTarget.nodeName,
+          target = _e$currentTarget.target;
+
+      if (nodeName === 'A' && (target && target !== '_self' || e.metaKey || e.ctrlKey || e.shiftKey || e.nativeEvent && e.nativeEvent.which === 2)) {
+        // ignore click for new tab / new window behavior
+        return;
+      }
+
+      var _this$formatUrls = _this.formatUrls(_this.props.href, _this.props.as),
+          href = _this$formatUrls.href,
+          as = _this$formatUrls.as;
+
+      if (!isLocal(href)) {
+        // ignore click if it's outside our scope (e.g. https://google.com)
+        return;
+      }
+
+      var pathname = window.location.pathname;
+      href = (0, _url.resolve)(pathname, href);
+      as = as ? (0, _url.resolve)(pathname, as) : href;
+      e.preventDefault(); //  avoid scroll for urls with anchor refs
+
+      var scroll = _this.props.scroll;
+
+      if (scroll == null) {
+        scroll = as.indexOf('#') < 0;
+      } // replace state instead of push if prop is present
+
+
+      _router["default"][_this.props.replace ? 'replace' : 'push'](href, as, {
+        shallow: _this.props.shallow
+      }).then(function (success) {
+        if (!success) return;
+
+        if (scroll) {
+          window.scrollTo(0, 0);
+          document.body.focus();
+        }
+      });
+    };
+
+    if (true) {
+      if (props.prefetch) {
+        console.warn('Next.js auto-prefetches automatically based on viewport. The prefetch attribute is no longer needed. More: https://err.sh/zeit/next.js/prefetch-true-deprecated');
+      }
+    }
+
+    _this.p = props.prefetch !== false;
+    return _this;
+  }
+
+  _createClass(Link, [{
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.cleanUpListeners();
+    }
+  }, {
+    key: "getPaths",
+    value: function getPaths() {
+      var pathname = window.location.pathname;
+
+      var _this$formatUrls2 = this.formatUrls(this.props.href, this.props.as),
+          parsedHref = _this$formatUrls2.href,
+          parsedAs = _this$formatUrls2.as;
+
+      var resolvedHref = (0, _url.resolve)(pathname, parsedHref);
+      return [resolvedHref, parsedAs ? (0, _url.resolve)(pathname, parsedAs) : resolvedHref];
+    }
+  }, {
+    key: "handleRef",
+    value: function handleRef(ref) {
+      var _this2 = this;
+
+      if (this.p && IntersectionObserver && ref && ref.tagName) {
+        this.cleanUpListeners();
+        var isPrefetched = prefetched[this.getPaths().join( // Join on an invalid URI character
+        '%')];
+
+        if (!isPrefetched) {
+          this.cleanUpListeners = listenToIntersections(ref, function () {
+            _this2.prefetch();
+          });
+        }
+      }
+    } // The function is memoized so that no extra lifecycles are needed
+    // as per https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
+
+  }, {
+    key: "prefetch",
+    value: function prefetch(options) {
+      if (!this.p || false) return; // Prefetch the JSON page if asked (only in the client)
+
+      var paths = this.getPaths(); // We need to handle a prefetch error here since we may be
+      // loading with priority which can reject but we don't
+      // want to force navigation since this is only a prefetch
+
+      _router["default"].prefetch(paths[
+      /* href */
+      0], paths[
+      /* asPath */
+      1], options)["catch"](function (err) {
+        if (true) {
+          // rethrow to show invalid URL errors
+          throw err;
+        }
+      });
+
+      prefetched[paths.join( // Join on an invalid URI character
+      '%')] = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      var children = this.props.children;
+
+      var _this$formatUrls3 = this.formatUrls(this.props.href, this.props.as),
+          href = _this$formatUrls3.href,
+          as = _this$formatUrls3.as; // Deprecated. Warning shown by propType check. If the children provided is a string (<Link>example</Link>) we wrap it in an <a> tag
+
+
+      if (typeof children === 'string') {
+        children = _react["default"].createElement("a", null, children);
+      } // This will return the first child, if multiple are provided it will throw an error
+
+
+      var child = _react.Children.only(children);
+
+      var props = {
+        ref: function ref(el) {
+          _this3.handleRef(el);
+
+          if (child && typeof child === 'object' && child.ref) {
+            if (typeof child.ref === 'function') child.ref(el);else if (typeof child.ref === 'object') {
+              child.ref.current = el;
+            }
+          }
+        },
+        onMouseEnter: function onMouseEnter(e) {
+          if (child.props && typeof child.props.onMouseEnter === 'function') {
+            child.props.onMouseEnter(e);
+          }
+
+          _this3.prefetch({
+            priority: true
+          });
+        },
+        onClick: function onClick(e) {
+          if (child.props && typeof child.props.onClick === 'function') {
+            child.props.onClick(e);
+          }
+
+          if (!e.defaultPrevented) {
+            _this3.linkClicked(e);
+          }
+        }
+      }; // If child is an <a> tag and doesn't have a href attribute, or if the 'passHref' property is
+      // defined, we specify the current 'href', so that repetition is not needed by the user
+
+      if (this.props.passHref || child.type === 'a' && !('href' in child.props)) {
+        props.href = as || href;
+      } // Add the ending slash to the paths. So, we can serve the
+      // "<page>/index.html" directly.
+
+
+      if (false) { var rewriteUrlForNextExport; }
+
+      return _react["default"].cloneElement(child, props);
+    }
+  }]);
+
+  return Link;
+}(_react.Component);
+
+if (true) {
+  var warn = (0, _utils.execOnce)(console.error); // This module gets removed by webpack.IgnorePlugin
+
+  var PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+  var exact = __webpack_require__(/*! prop-types-exact */ "./node_modules/prop-types-exact/build/index.js"); // @ts-ignore the property is supported, when declaring it on the class it outputs an extra bit of code which is not needed.
+
+
+  Link.propTypes = exact({
+    href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+    as: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    prefetch: PropTypes.bool,
+    replace: PropTypes.bool,
+    shallow: PropTypes.bool,
+    passHref: PropTypes.bool,
+    scroll: PropTypes.bool,
+    children: PropTypes.oneOfType([PropTypes.element, function (props, propName) {
+      var value = props[propName];
+
+      if (typeof value === 'string') {
+        warn("Warning: You're using a string directly inside <Link>. This usage has been deprecated. Please add an <a> tag as child of <Link>");
+      }
+
+      return null;
+    }]).isRequired
+  });
+}
+
+var _default = Link;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -7145,6 +7661,107 @@ function formatWithValidation(url, options) {
 exports.formatWithValidation = formatWithValidation;
 exports.SP = typeof performance !== 'undefined';
 exports.ST = exports.SP && typeof performance.mark === 'function' && typeof performance.measure === 'function';
+
+/***/ }),
+
+/***/ "./node_modules/next/link.js":
+/*!***********************************!*\
+  !*** ./node_modules/next/link.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/next/dist/client/link.js")
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types-exact/build/helpers/isPlainObject.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/prop-types-exact/build/helpers/isPlainObject.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+exports['default'] = isPlainObject;
+function isPlainObject(x) {
+  return x && (typeof x === 'undefined' ? 'undefined' : _typeof(x)) === 'object' && !Array.isArray(x);
+}
+module.exports = exports['default'];
+//# sourceMappingURL=isPlainObject.js.map
+
+/***/ }),
+
+/***/ "./node_modules/prop-types-exact/build/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/prop-types-exact/build/index.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports['default'] = forbidExtraProps;
+
+var _object = __webpack_require__(/*! object.assign */ "./node_modules/next/dist/build/polyfills/object.assign/index.js");
+
+var _object2 = _interopRequireDefault(_object);
+
+var _has = __webpack_require__(/*! has */ "./node_modules/has/src/index.js");
+
+var _has2 = _interopRequireDefault(_has);
+
+var _isPlainObject = __webpack_require__(/*! ./helpers/isPlainObject */ "./node_modules/prop-types-exact/build/helpers/isPlainObject.js");
+
+var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var zeroWidthSpace = '\u200B';
+var specialProperty = 'prop-types-exact: ' + zeroWidthSpace;
+var semaphore = typeof Symbol === 'function' && typeof Symbol['for'] === 'function' ? Symbol['for'](specialProperty) : /* istanbul ignore next */specialProperty;
+
+function brand(fn) {
+  return (0, _object2['default'])(fn, _defineProperty({}, specialProperty, semaphore));
+}
+
+function isBranded(value) {
+  return value && value[specialProperty] === semaphore;
+}
+
+function forbidExtraProps(propTypes) {
+  if (!(0, _isPlainObject2['default'])(propTypes)) {
+    throw new TypeError('given propTypes must be an object');
+  }
+  if ((0, _has2['default'])(propTypes, specialProperty) && !isBranded(propTypes[specialProperty])) {
+    throw new TypeError('Against all odds, you created a propType for a prop that uses both the zero-width space and our custom string - which, sadly, conflicts with `prop-types-exact`');
+  }
+
+  return (0, _object2['default'])({}, propTypes, _defineProperty({}, specialProperty, brand(function () {
+    function forbidUnknownProps(props, _, componentName) {
+      var unknownProps = Object.keys(props).filter(function (prop) {
+        return !(0, _has2['default'])(propTypes, prop);
+      });
+      if (unknownProps.length > 0) {
+        return new TypeError(String(componentName) + ': unknown props found: ' + String(unknownProps.join(', ')));
+      }
+      return null;
+    }
+
+    return forbidUnknownProps;
+  }())));
+}
+module.exports = exports['default'];
+//# sourceMappingURL=index.js.map
 
 /***/ }),
 

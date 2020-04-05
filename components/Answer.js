@@ -8,7 +8,7 @@ export default function Answer(props) {
           {props.data.upvotes}&nbsp;&nbsp;&nbsp;
           <Button>&uarr;</Button>
         </div>
-        <div className="col-md-11"><div className="content">{props.data.body}</div> - {props.data.full_name}</div>
+        <div className="col-md-11"><div className="content">{props.data.body}</div> - {props.data.author.full_name}</div>
       </div>
       <br />
       

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -154,7 +154,7 @@ function Answer(props) {
       lineNumber: 11,
       columnNumber: 36
     }
-  }, props.data.body), " - ", props.data.full_name)), __jsx("br", {
+  }, props.data.body), " - ", props.data.author.full_name)), __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -408,11 +408,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _data_questionsData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/questionsData */ "./data/questionsData.js");
 /* harmony import */ var _Answer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Answer */ "./components/Answer.js");
-/* harmony import */ var _PostAnswer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PostAnswer */ "./components/PostAnswer.js");
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Form */ "react-bootstrap/Form");
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _PostAnswer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PostAnswer */ "./components/PostAnswer.js");
 var _jsxFileName = "C:\\Users\\skukr\\Desktop\\redcarpet\\stackoverflow-react-next\\components\\QuestionDetail.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -426,38 +432,68 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     _defineProperty(this, "state", {
       data: this.props.data,
-      answerCount: 0
+      answerCount: 0,
+      liked: false,
+      body: null
+    });
+
+    _defineProperty(this, "updateDetails", async () => {
+      const res = await fetch(`http://localhost:3000/api/qdetail?id=${this.props.questionId}`);
+      const json = await res.json();
+      this.setState({
+        data: json,
+        answerCount: json.answers.length
+      });
     });
   }
 
   async componentDidMount() {
-    console.log(`http://localhost:3000/api/qdetail?id=${this.props.questionId}`);
-    const res = await fetch(`http://localhost:3000/api/qdetail?id=${this.props.questionId}`);
-    const json = await res.json();
-    this.setState({
-      data: json // answerCount: question.answers.length,
-
-    });
+    this.updateDetails();
   }
 
   render() {
     const {
       data,
-      answerCount
+      answerCount,
+      liked
     } = this.state;
+
+    const upvote = async () => {
+      this.setState({
+        liked: true
+      });
+      data.like_count += 1;
+      const res = await fetch(`http://localhost:3000/api/qupvote?id=${this.props.questionId}`);
+    };
+
+    const handleChange = event => {
+      this.setState({
+        [event.target.name]: event.target.value
+      });
+    };
+
+    const handleSubmit = async event => {
+      event.preventDefault();
+      console.log('clicked');
+      const res = await fetch(`http://localhost:3000/api/a?id=${this.props.questionId}`, {
+        method: "post",
+        body: JSON.stringify(this.state.body)
+      });
+    };
+
     return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, data ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("h1", {
       className: "question-heading",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 57,
         columnNumber: 13
       }
     }, data.title), __jsx("hr", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28,
+        lineNumber: 58,
         columnNumber: 13
       }
     }), __jsx("h5", {
@@ -465,14 +501,14 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29,
+        lineNumber: 59,
         columnNumber: 13
       }
     }, data.body), __jsx("hr", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
+        lineNumber: 60,
         columnNumber: 13
       }
     }), __jsx("p", {
@@ -480,30 +516,38 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31,
+        lineNumber: 61,
         columnNumber: 13
       }
-    }, answerCount, " Answers \xA0\xA0\xA0\xA0", __jsx("span", {
-      className: "upvote",
-      onClick: () => console.log('upvoted'),
+    }, answerCount, " Answers \xA0\xA0\xA0\xA0", liked ? __jsx("span", {
+      className: "upvote liked",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31,
-        columnNumber: 79
+        lineNumber: 64,
+        columnNumber: 17
+      }
+    }, "\u2191") : __jsx("span", {
+      className: "upvote",
+      onClick: upvote,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66,
+        columnNumber: 17
       }
     }, "\u2191"), "\xA0Likes ", data.like_count), __jsx("hr", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32,
+        lineNumber: 72,
         columnNumber: 13
       }
     }), __jsx("br", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33,
+        lineNumber: 73,
         columnNumber: 13
       }
     }), data.answers.map(ans => __jsx(_Answer__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -512,15 +556,58 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35,
+        lineNumber: 75,
         columnNumber: 15
       }
-    }))) : __jsx("div", {
+    })), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      onSubmit: handleSubmit,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 77,
+        columnNumber: 13
+      }
+    }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Group, {
+      controlId: "exampleForm.ControlTextarea1",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 78,
+        columnNumber: 15
+      }
+    }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Label, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 79,
+        columnNumber: 17
+      }
+    }, "Write Answer"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Control, {
+      as: "textarea",
+      rows: "6",
+      name: "body",
+      onChange: handleChange,
+      required: true,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 80,
+        columnNumber: 17
+      }
+    })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+      type: "submit",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88,
+        columnNumber: 15
+      }
+    }, "Post Question"))) : __jsx("div", {
       className: "center text-center",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39,
+        lineNumber: 92,
         columnNumber: 11
       }
     }, __jsx(react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -528,7 +615,7 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40,
+        lineNumber: 93,
         columnNumber: 13
       }
     })));
@@ -2486,7 +2573,7 @@ function Post(props) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/q/[qid].js ***!
   \********************************/

@@ -59,7 +59,7 @@ function Answer(props) {
       lineNumber: 11,
       columnNumber: 36
     }
-  }, props.data.body), " - ", props.data.full_name)), __jsx("br", {
+  }, props.data.body), " - ", props.data.author.full_name)), __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -352,7 +352,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap/Spinner */ "./node_modules/react-bootstrap/esm/Spinner.js");
 /* harmony import */ var _data_questionsData__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../data/questionsData */ "./data/questionsData.js");
 /* harmony import */ var _Answer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Answer */ "./components/Answer.js");
-/* harmony import */ var _PostAnswer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./PostAnswer */ "./components/PostAnswer.js");
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-bootstrap/Form */ "./node_modules/react-bootstrap/esm/Form.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var _PostAnswer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./PostAnswer */ "./components/PostAnswer.js");
 
 
 
@@ -367,6 +369,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+
 
 
 
@@ -392,7 +396,39 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "state", {
       data: _this.props.data,
-      answerCount: 0
+      answerCount: 0,
+      liked: false,
+      body: null
+    });
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "updateDetails", function _callee() {
+      var res, json;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("http://localhost:3000/api/qdetail?id=".concat(_this.props.questionId)));
+
+            case 2:
+              res = _context.sent;
+              _context.next = 5;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(res.json());
+
+            case 5:
+              json = _context.sent;
+
+              _this.setState({
+                data: json,
+                answerCount: json.answers.length
+              });
+
+            case 7:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, null, null, null, Promise);
     });
 
     return _this;
@@ -401,30 +437,15 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(QuestionDetail, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var res, json;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function componentDidMount$(_context) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function componentDidMount$(_context2) {
         while (1) {
-          switch (_context.prev = _context.next) {
+          switch (_context2.prev = _context2.next) {
             case 0:
-              console.log("http://localhost:3000/api/qdetail?id=".concat(this.props.questionId));
-              _context.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("http://localhost:3000/api/qdetail?id=".concat(this.props.questionId)));
+              this.updateDetails();
 
-            case 3:
-              res = _context.sent;
-              _context.next = 6;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(res.json());
-
-            case 6:
-              json = _context.sent;
-              this.setState({
-                data: json // answerCount: question.answers.length,
-
-              });
-
-            case 8:
+            case 1:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
         }
       }, null, this, null, Promise);
@@ -436,20 +457,76 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
 
       var _this$state = this.state,
           data = _this$state.data,
-          answerCount = _this$state.answerCount;
+          answerCount = _this$state.answerCount,
+          liked = _this$state.liked;
+
+      var upvote = function upvote() {
+        var res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function upvote$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _this2.setState({
+                  liked: true
+                });
+
+                data.like_count += 1;
+                _context3.next = 4;
+                return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("http://localhost:3000/api/qupvote?id=".concat(_this2.props.questionId)));
+
+              case 4:
+                res = _context3.sent;
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, null, null, null, Promise);
+      };
+
+      var handleChange = function handleChange(event) {
+        _this2.setState(Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])({}, event.target.name, event.target.value));
+      };
+
+      var handleSubmit = function handleSubmit(event) {
+        var res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function handleSubmit$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                event.preventDefault();
+                console.log('clicked');
+                _context4.next = 4;
+                return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("http://localhost:3000/api/a?id=".concat(_this2.props.questionId), {
+                  method: "post",
+                  body: JSON.stringify(_this2.state.body)
+                }));
+
+              case 4:
+                res = _context4.sent;
+
+              case 5:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, null, null, null, Promise);
+      };
+
       return __jsx(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, data ? __jsx(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, __jsx("h1", {
         className: "question-heading",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27,
+          lineNumber: 57,
           columnNumber: 13
         }
       }, data.title), __jsx("hr", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28,
+          lineNumber: 58,
           columnNumber: 13
         }
       }), __jsx("h5", {
@@ -457,14 +534,14 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29,
+          lineNumber: 59,
           columnNumber: 13
         }
       }, data.body), __jsx("hr", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30,
+          lineNumber: 60,
           columnNumber: 13
         }
       }), __jsx("p", {
@@ -472,32 +549,38 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31,
+          lineNumber: 61,
           columnNumber: 13
         }
-      }, answerCount, " Answers \xA0\xA0\xA0\xA0", __jsx("span", {
-        className: "upvote",
-        onClick: function onClick() {
-          return console.log('upvoted');
-        },
+      }, answerCount, " Answers \xA0\xA0\xA0\xA0", liked ? __jsx("span", {
+        className: "upvote liked",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31,
-          columnNumber: 79
+          lineNumber: 64,
+          columnNumber: 17
+        }
+      }, "\u2191") : __jsx("span", {
+        className: "upvote",
+        onClick: upvote,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66,
+          columnNumber: 17
         }
       }, "\u2191"), "\xA0Likes ", data.like_count), __jsx("hr", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32,
+          lineNumber: 72,
           columnNumber: 13
         }
       }), __jsx("br", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33,
+          lineNumber: 73,
           columnNumber: 13
         }
       }), data.answers.map(function (ans) {
@@ -507,16 +590,59 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35,
+            lineNumber: 75,
             columnNumber: 15
           }
         });
-      })) : __jsx("div", {
+      }), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        onSubmit: handleSubmit,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77,
+          columnNumber: 13
+        }
+      }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_12__["default"].Group, {
+        controlId: "exampleForm.ControlTextarea1",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78,
+          columnNumber: 15
+        }
+      }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_12__["default"].Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79,
+          columnNumber: 17
+        }
+      }, "Write Answer"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_12__["default"].Control, {
+        as: "textarea",
+        rows: "6",
+        name: "body",
+        onChange: handleChange,
+        required: true,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80,
+          columnNumber: 17
+        }
+      })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_13__["Button"], {
+        type: "submit",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88,
+          columnNumber: 15
+        }
+      }, "Post Question"))) : __jsx("div", {
         className: "center text-center",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39,
+          lineNumber: 92,
           columnNumber: 11
         }
       }, __jsx(react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -524,7 +650,7 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40,
+          lineNumber: 93,
           columnNumber: 13
         }
       })));
@@ -20547,7 +20673,7 @@ function Post(props) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!******************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fq%2F%5Bqid%5D&absolutePagePath=C%3A%5CUsers%5Cskukr%5CDesktop%5Credcarpet%5Cstackoverflow-react-next%5Cpages%5Cq%5C%5Bqid%5D.js ***!
   \******************************************************************************************************************************************************************************/
@@ -20570,5 +20696,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[qid].js.map

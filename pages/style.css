@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 /* Index Starts Here */
 .floating-btn {
@@ -45,16 +45,22 @@ body {
 
 /* Question Detail Starts Here */
 .question-heading {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 .question-body {
-    font-weight: 400;
+  font-weight: 400;
 }
 .upvote {
-    background-color: #007bff;
-    color: white;
-    padding: 5px;
-    cursor: pointer;
+  background-color: white;
+  color: #007bff;
+  border: 1px solid #007bff;
+  padding: 5px;
+  cursor: pointer;
+}
+.liked {
+  color: white;
+  background-color: #007bff;
+  cursor: not-allowed;
 }
 /* Question Detail Ends Here */
 /* Answer Starts Here */

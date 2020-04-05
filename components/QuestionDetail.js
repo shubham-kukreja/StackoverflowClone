@@ -9,7 +9,8 @@ class QuestionDetail extends Component {
     data: null,
     answerCount: 0,
     liked: false,
-    answerBody: null,
+    answerBody: '',
+    author : ''
   };
   async componentDidMount() {
     this.updateDetails();
@@ -25,7 +26,7 @@ class QuestionDetail extends Component {
     });
   };
   render() {
-    let { data, answerCount, liked, answerBody } = this.state;
+    let { data, answerCount, liked, answerBody ,author } = this.state;
     const upvote = async () => {
       this.setState({
         liked: true,
@@ -44,15 +45,15 @@ class QuestionDetail extends Component {
       event.preventDefault();
       let obj = {
         author: {
-          full_name: "Shubham Kukreja",
+          full_name : author
         },
         body: answerBody,
         upvotes: 0,
       };
-      let newData = data
-      newData.answers.push(obj)
+      let newData = data;
+      newData.answers.push(obj);
       this.setState({
-        data : newData
+        data: newData,
       });
       const res = await fetch(
         `http://localhost:3000/api/a?id=${this.props.questionId}`,
@@ -79,7 +80,8 @@ class QuestionDetail extends Component {
                   &uarr;
                 </span>
               )}
-              &nbsp;Likes {data.like_count}&nbsp;&nbsp;&nbsp;&nbsp; - {data.author.full_name}
+              &nbsp;Likes {data.like_count}&nbsp;&nbsp;&nbsp;&nbsp; -{" "}
+              {data.author}
             </p>
             <hr />
             <br />
@@ -87,6 +89,15 @@ class QuestionDetail extends Component {
               <Answer data={ans} key={ans.body} />
             ))}
             <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>Your Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="author"
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Write Answer</Form.Label>
                 <Form.Control
@@ -99,7 +110,8 @@ class QuestionDetail extends Component {
               </Form.Group>
               <Button type="submit">Post Answer</Button>
             </Form>
-            <br/><br/>
+            <br />
+            <br />
           </>
         ) : (
           <div className="center text-center">

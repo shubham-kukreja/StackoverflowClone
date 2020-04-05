@@ -11,10 +11,10 @@ handler.get(async (req, res) => {
 });
 
 handler.post(async (req, res) => {
-  let data = req.body;
-  data = JSON.parse(data);
-  console.log(data);
-  let newData = await req.db.collection("questions").insertOne(data);
+  let body = req.body;
+  console.log(body);
+  body = JSON.parse(body);
+  let newData = await req.db.collection("questions").insertOne(body);
   res.json({ newData: newData });
 });
 

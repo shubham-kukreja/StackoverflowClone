@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -371,7 +371,8 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       data: null,
       answerCount: 0,
       liked: false,
-      answerBody: null
+      answerBody: '',
+      author: ''
     });
 
     _defineProperty(this, "updateDetails", async () => {
@@ -393,7 +394,8 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       data,
       answerCount,
       liked,
-      answerBody
+      answerBody,
+      author
     } = this.state;
 
     const upvote = async () => {
@@ -414,7 +416,7 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       event.preventDefault();
       let obj = {
         author: {
-          full_name: "Shubham Kukreja"
+          full_name: author
         },
         body: answerBody,
         upvotes: 0
@@ -435,14 +437,14 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 70,
         columnNumber: 13
       }
     }, data.title), __jsx("hr", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70,
+        lineNumber: 71,
         columnNumber: 13
       }
     }), __jsx("h5", {
@@ -450,14 +452,14 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71,
+        lineNumber: 72,
         columnNumber: 13
       }
     }, data.body), __jsx("hr", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72,
+        lineNumber: 73,
         columnNumber: 13
       }
     }), __jsx("p", {
@@ -465,7 +467,7 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73,
+        lineNumber: 74,
         columnNumber: 13
       }
     }, answerCount, " Answers \xA0\xA0\xA0\xA0", liked ? __jsx("span", {
@@ -473,7 +475,7 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 76,
+        lineNumber: 77,
         columnNumber: 17
       }
     }, "\u2191") : __jsx("span", {
@@ -482,21 +484,21 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78,
+        lineNumber: 79,
         columnNumber: 17
       }
-    }, "\u2191"), "\xA0Likes ", data.like_count, "\xA0\xA0\xA0\xA0 - ", data.author.full_name), __jsx("hr", {
+    }, "\u2191"), "\xA0Likes ", data.like_count, "\xA0\xA0\xA0\xA0 -", " ", data.author), __jsx("hr", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84,
+        lineNumber: 86,
         columnNumber: 13
       }
     }), __jsx("br", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85,
+        lineNumber: 87,
         columnNumber: 13
       }
     }), data.answers.map(ans => __jsx(_Answer__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -505,7 +507,7 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 89,
         columnNumber: 15
       }
     })), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -513,22 +515,48 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89,
+        lineNumber: 91,
         columnNumber: 13
       }
     }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Group, {
-      controlId: "exampleForm.ControlTextarea1",
+      controlId: "exampleForm.ControlInput1",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 92,
         columnNumber: 15
       }
     }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Label, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91,
+        lineNumber: 93,
+        columnNumber: 17
+      }
+    }, "Your Name"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Control, {
+      type: "text",
+      name: "author",
+      onChange: handleChange,
+      required: true,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 94,
+        columnNumber: 17
+      }
+    })), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Group, {
+      controlId: "exampleForm.ControlTextarea1",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 101,
+        columnNumber: 15
+      }
+    }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Label, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102,
         columnNumber: 17
       }
     }, "Write Answer"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Control, {
@@ -540,7 +568,7 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92,
+        lineNumber: 103,
         columnNumber: 17
       }
     })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
@@ -548,29 +576,29 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100,
+        lineNumber: 111,
         columnNumber: 15
       }
     }, "Post Answer")), __jsx("br", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102,
+        lineNumber: 113,
         columnNumber: 13
       }
     }), __jsx("br", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102,
-        columnNumber: 18
+        lineNumber: 114,
+        columnNumber: 13
       }
     })) : __jsx("div", {
       className: "center text-center",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105,
+        lineNumber: 117,
         columnNumber: 11
       }
     }, __jsx(react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -578,7 +606,7 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106,
+        lineNumber: 118,
         columnNumber: 13
       }
     })));
@@ -2309,7 +2337,7 @@ function Post(props) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 7:
 /*!********************************!*\
   !*** multi ./pages/q/[qid].js ***!
   \********************************/

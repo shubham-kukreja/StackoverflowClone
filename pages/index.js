@@ -4,10 +4,12 @@ import QuestionCard from "../components/QuestionCard";
 import questionData from "../data/questionsData";
 import { Button } from "react-bootstrap";
 import Link from 'next/link'
+import fetch from "isomorphic-unfetch";
+
 
 class Index extends Component {
   state = {
-    questions: questionData,
+    questions: this.props.data
   };
   render() {
     return (
@@ -18,11 +20,15 @@ class Index extends Component {
           </Link>
         </Button>
         {this.state.questions.map((item) => (
-          <QuestionCard question={item} key={item.id} />
+          <QuestionCard question={item} key={item._id} />
         ))}
       </Layout>
     );
   }
 }
-
+Index.getInitialProps = async () => {
+  const res = await fetch("http://localhost:3000/api/q");
+  const json = await res.json();
+  return { data: json };
+};
 export default Index;

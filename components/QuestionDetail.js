@@ -6,17 +6,16 @@ import PostAnswer from "./PostAnswer";
 
 class QuestionDetail extends Component {
   state = {
-    data: null,
+    data: this.props.data,
     answerCount: 0,
   };
-  componentDidMount() {
-    const question = questionData.filter(
-      (item) => item.id === parseInt(this.props.questionId)
-    )[0];
-
+  async componentDidMount() {
+    console.log(`http://localhost:3000/api/qdetail?id=${this.props.questionId}`)
+    const res = await fetch(`http://localhost:3000/api/qdetail?id=${this.props.questionId}`);
+    const json = await res.json();
     this.setState({
-      data: question,
-      answerCount: question.answers.length,
+      data: json,
+      // answerCount: question.answers.length,
     });
   }
   render() {

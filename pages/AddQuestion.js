@@ -16,16 +16,26 @@ export default class AddQuestion extends Component {
         [event.target.name]: event.target.value,
       });
     };
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(this.state)
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      console.log(this.state);
+      const res = await fetch("http://localhost:3000/api/q", {
+        method: "post",
+        body: JSON.stringify(this.state),
+      });
+      console.log(res);
     };
     return (
       <Layout>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="exampleForm.ControlInput1">
             <Form.Label>Question Title</Form.Label>
-            <Form.Control type="text" name="title" onChange={handleChange} required/>
+            <Form.Control
+              type="text"
+              name="title"
+              onChange={handleChange}
+              required
+            />
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>Body</Form.Label>

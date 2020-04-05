@@ -14,7 +14,7 @@ export default function QuestionCard(props) {
         <div className="card-col-2">
           <Card.Title>{props.question.title}</Card.Title>
           <Card.Text>{props.question.body} </Card.Text>
-          <PostLink className="post-link" qid={props.question.id}>
+          <PostLink className="post-link" qid={props.question._id}>
             View Details > 
           </PostLink>
         </div>

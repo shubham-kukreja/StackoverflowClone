@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import questionData from "../data/questionsData";
 import Answer from "./Answer";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
-import PostAnswer from "./PostAnswer";
 
 class QuestionDetail extends Component {
   state = {
-    data: this.props.data,
+    data: null,
     answerCount: 0,
     liked: false,
-    body : null
+    answerBody: null,
   };
   async componentDidMount() {
     this.updateDetails();
@@ -27,7 +25,7 @@ class QuestionDetail extends Component {
     });
   };
   render() {
-    const { data, answerCount, liked } = this.state;
+    let { data, answerCount, liked, answerBody } = this.state;
     const upvote = async () => {
       this.setState({
         liked: true,
@@ -44,11 +42,25 @@ class QuestionDetail extends Component {
     };
     const handleSubmit = async (event) => {
       event.preventDefault();
-      console.log('clicked')
-      const res = await fetch( `http://localhost:3000/api/a?id=${this.props.questionId}`, {
-        method: "post",
-        body: JSON.stringify(this.state.body),
+      let obj = {
+        author: {
+          full_name: "Shubham Kukreja",
+        },
+        body: answerBody,
+        upvotes: 0,
+      };
+      let newData = data
+      newData.answers.push(obj)
+      this.setState({
+        data : newData
       });
+      const res = await fetch(
+        `http://localhost:3000/api/a?id=${this.props.questionId}`,
+        {
+          method: "post",
+          body: JSON.stringify(obj),
+        }
+      );
     };
     return (
       <>
@@ -58,7 +70,7 @@ class QuestionDetail extends Component {
             <hr />
             <h5 className="question-body">{data.body}</h5>
             <hr />
-            <p className="lead">
+            <p className="lead question-stats">
               {answerCount} Answers &nbsp;&nbsp;&nbsp;&nbsp;
               {liked ? (
                 <span className="upvote liked">&uarr;</span>
@@ -67,12 +79,12 @@ class QuestionDetail extends Component {
                   &uarr;
                 </span>
               )}
-              &nbsp;Likes {data.like_count}
+              &nbsp;Likes {data.like_count}&nbsp;&nbsp;&nbsp;&nbsp; - {data.author.full_name}
             </p>
             <hr />
             <br />
             {data.answers.map((ans) => (
-              <Answer data={ans} key={ans.id} />
+              <Answer data={ans} key={ans.body} />
             ))}
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -80,13 +92,14 @@ class QuestionDetail extends Component {
                 <Form.Control
                   as="textarea"
                   rows="6"
-                  name="body"
+                  name="answerBody"
                   onChange={handleChange}
                   required
                 />
               </Form.Group>
-              <Button type="submit">Post Question</Button>
+              <Button type="submit">Post Answer</Button>
             </Form>
+            <br/><br/>
           </>
         ) : (
           <div className="center text-center">

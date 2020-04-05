@@ -1,4 +1,24 @@
 {
+  "../components/CKEditor": [
+    {
+      "id": "./components/CKEditor.js",
+      "name": "./components/CKEditor.js",
+      "file": "static/chunks/2.js",
+      "publicPath": "static/chunks/2.js"
+    },
+    {
+      "id": "./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js",
+      "name": "./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js",
+      "file": "static/chunks/2.js",
+      "publicPath": "static/chunks/2.js"
+    },
+    {
+      "id": "./node_modules/@ckeditor/ckeditor5-react/dist/ckeditor.js",
+      "name": "./node_modules/@ckeditor/ckeditor5-react/dist/ckeditor.js",
+      "file": "static/chunks/2.js",
+      "publicPath": "static/chunks/2.js"
+    }
+  ],
   "./dev/noop": [
     {
       "id": "./node_modules/next/dist/client/dev/noop.js",

@@ -3,6 +3,11 @@ import Layout from "../components/Layout";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
+import dynamic from "next/dynamic";
+
+const CKEditor = dynamic(() => import("../components/CKEditor"), {
+  ssr: false,
+});
 
 export default class AddQuestion extends Component {
   state = {
@@ -18,6 +23,9 @@ export default class AddQuestion extends Component {
       this.setState({
         [event.target.name]: event.target.value,
       });
+    };
+    const handleChangeEditor = (event) => {
+      console.log(event);
     };
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -41,11 +49,10 @@ export default class AddQuestion extends Component {
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Body</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows="6"
+              <CKEditor
+                data="Yor Answer Starts Here"
                 name="body"
-                onChange={handleChange}
+                onChange={handleChangeEditor}
                 required
               />
             </Form.Group>

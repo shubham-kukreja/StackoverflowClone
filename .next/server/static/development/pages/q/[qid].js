@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -102,74 +102,102 @@ module.exports =
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Answer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_bootstrap_Jumbotron__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Jumbotron */ "react-bootstrap/Jumbotron");
-/* harmony import */ var react_bootstrap_Jumbotron__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Jumbotron__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\Users\\skukr\\Desktop\\redcarpet\\stackoverflow-react-next\\components\\Answer.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function Answer(props) {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
-    className: "row answer-row",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6,
-      columnNumber: 7
-    }
-  }, __jsx("div", {
-    className: "col-md-1",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7,
-      columnNumber: 9
-    }
-  }, props.data.upvotes, "\xA0\xA0\xA0", __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 11
-    }
-  }, "\u2191")), __jsx("div", {
-    className: "col-md-11",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 9
-    }
-  }, __jsx("div", {
-    className: "content",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 36
-    }
-  }, props.data.body), " - ", props.data.author.full_name)), __jsx("br", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 7
-    }
-  }), __jsx("hr", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 7
-    }
-  }));
+
+
+class Answer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    _defineProperty(this, "state", {
+      liked: false
+    });
+  }
+
+  render() {
+    const upvote = async () => {
+      this.setState({
+        liked: true
+      });
+      this.props.data.upvotes += 1;
+      const res = await fetch(`http://localhost:3000/api/aupvote?id=${this.props.questionId}`);
+    };
+
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+      className: "row answer-row question-answer",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19,
+        columnNumber: 7
+      }
+    }, __jsx("div", {
+      className: "col-md-1",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20,
+        columnNumber: 9
+      }
+    }, this.props.data.upvotes, "\xA0\xA0\xA0", this.state.liked ? __jsx("span", {
+      className: "upvote liked",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23,
+        columnNumber: 13
+      }
+    }, "\u2191") : __jsx("span", {
+      className: "upvote",
+      onClick: upvote,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25,
+        columnNumber: 13
+      }
+    }, "\u2191")), __jsx("div", {
+      className: "col-md-11",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30,
+        columnNumber: 9
+      }
+    }, __jsx("div", {
+      className: "content",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31,
+        columnNumber: 11
+      }
+    }, this.props.data.body), " -", " ", this.props.data.author.full_name)), __jsx("br", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35,
+        columnNumber: 7
+      }
+    }), __jsx("hr", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37,
+        columnNumber: 7
+      }
+    }));
+  }
+
 }
+
+/* harmony default export */ __webpack_exports__["default"] = (Answer);
 
 /***/ }),
 
@@ -306,93 +334,6 @@ function MainNavbar() {
 
 /***/ }),
 
-/***/ "./components/PostAnswer.js":
-/*!**********************************!*\
-  !*** ./components/PostAnswer.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PostAnswer; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Form */ "react-bootstrap/Form");
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\skukr\\Desktop\\redcarpet\\stackoverflow-react-next\\components\\PostAnswer.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-class PostAnswer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  render() {
-    const handleChange = event => {
-      this.setState({
-        [event.target.name]: event.target.value
-      });
-    };
-
-    const handleSubmit = event => {
-      event.preventDefault();
-      console.log(this.state);
-    };
-
-    return __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      onSubmit: handleSubmit,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17,
-        columnNumber: 7
-      }
-    }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
-      controlId: "exampleForm.ControlTextarea1",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18,
-        columnNumber: 9
-      }
-    }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19,
-        columnNumber: 11
-      }
-    }, "Answer This Question"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
-      as: "textarea",
-      rows: "2",
-      name: "body",
-      onChange: handleChange,
-      style: {
-        'height': '40px'
-      },
-      required: true,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20,
-        columnNumber: 11
-      }
-    })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-      type: "submit",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29,
-        columnNumber: 9
-      }
-    }, "Submit"));
-  }
-
-}
-
-/***/ }),
-
 /***/ "./components/QuestionDetail.js":
 /*!**************************************!*\
   !*** ./components/QuestionDetail.js ***!
@@ -406,19 +347,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Spinner */ "react-bootstrap/Spinner");
 /* harmony import */ var react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _data_questionsData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/questionsData */ "./data/questionsData.js");
-/* harmony import */ var _Answer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Answer */ "./components/Answer.js");
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Form */ "react-bootstrap/Form");
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _PostAnswer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PostAnswer */ "./components/PostAnswer.js");
+/* harmony import */ var _Answer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Answer */ "./components/Answer.js");
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Form */ "react-bootstrap/Form");
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "C:\\Users\\skukr\\Desktop\\redcarpet\\stackoverflow-react-next\\components\\QuestionDetail.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 
 
@@ -431,10 +368,10 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     super(...args);
 
     _defineProperty(this, "state", {
-      data: this.props.data,
+      data: null,
       answerCount: 0,
       liked: false,
-      body: null
+      answerBody: null
     });
 
     _defineProperty(this, "updateDetails", async () => {
@@ -452,10 +389,11 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    const {
+    let {
       data,
       answerCount,
-      liked
+      liked,
+      answerBody
     } = this.state;
 
     const upvote = async () => {
@@ -474,10 +412,21 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     const handleSubmit = async event => {
       event.preventDefault();
-      console.log('clicked');
+      let obj = {
+        author: {
+          full_name: "Shubham Kukreja"
+        },
+        body: answerBody,
+        upvotes: 0
+      };
+      let newData = data;
+      newData.answers.push(obj);
+      this.setState({
+        data: newData
+      });
       const res = await fetch(`http://localhost:3000/api/a?id=${this.props.questionId}`, {
         method: "post",
-        body: JSON.stringify(this.state.body)
+        body: JSON.stringify(obj)
       });
     };
 
@@ -486,14 +435,14 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57,
+        lineNumber: 69,
         columnNumber: 13
       }
     }, data.title), __jsx("hr", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58,
+        lineNumber: 70,
         columnNumber: 13
       }
     }), __jsx("h5", {
@@ -501,22 +450,22 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59,
+        lineNumber: 71,
         columnNumber: 13
       }
     }, data.body), __jsx("hr", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60,
+        lineNumber: 72,
         columnNumber: 13
       }
     }), __jsx("p", {
-      className: "lead",
+      className: "lead question-stats",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61,
+        lineNumber: 73,
         columnNumber: 13
       }
     }, answerCount, " Answers \xA0\xA0\xA0\xA0", liked ? __jsx("span", {
@@ -524,7 +473,7 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64,
+        lineNumber: 76,
         columnNumber: 17
       }
     }, "\u2191") : __jsx("span", {
@@ -533,81 +482,95 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 78,
         columnNumber: 17
       }
-    }, "\u2191"), "\xA0Likes ", data.like_count), __jsx("hr", {
+    }, "\u2191"), "\xA0Likes ", data.like_count, "\xA0\xA0\xA0\xA0 - ", data.author.full_name), __jsx("hr", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72,
+        lineNumber: 84,
         columnNumber: 13
       }
     }), __jsx("br", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73,
+        lineNumber: 85,
         columnNumber: 13
       }
-    }), data.answers.map(ans => __jsx(_Answer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), data.answers.map(ans => __jsx(_Answer__WEBPACK_IMPORTED_MODULE_2__["default"], {
       data: ans,
-      key: ans.id,
+      key: ans.body,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75,
+        lineNumber: 87,
         columnNumber: 15
       }
-    })), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    })), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a, {
       onSubmit: handleSubmit,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77,
+        lineNumber: 89,
         columnNumber: 13
       }
-    }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Group, {
+    }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Group, {
       controlId: "exampleForm.ControlTextarea1",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78,
+        lineNumber: 90,
         columnNumber: 15
       }
-    }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Label, {
+    }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Label, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79,
+        lineNumber: 91,
         columnNumber: 17
       }
-    }, "Write Answer"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Control, {
+    }, "Write Answer"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Control, {
       as: "textarea",
       rows: "6",
-      name: "body",
+      name: "answerBody",
       onChange: handleChange,
       required: true,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80,
+        lineNumber: 92,
         columnNumber: 17
       }
-    })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+    })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
       type: "submit",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88,
+        lineNumber: 100,
         columnNumber: 15
       }
-    }, "Post Question"))) : __jsx("div", {
+    }, "Post Answer")), __jsx("br", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102,
+        columnNumber: 13
+      }
+    }), __jsx("br", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102,
+        columnNumber: 18
+      }
+    })) : __jsx("div", {
       className: "center text-center",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92,
+        lineNumber: 105,
         columnNumber: 11
       }
     }, __jsx(react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -615,7 +578,7 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93,
+        lineNumber: 106,
         columnNumber: 13
       }
     })));
@@ -624,233 +587,6 @@ class QuestionDetail extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (QuestionDetail);
-
-/***/ }),
-
-/***/ "./data/questionsData.js":
-/*!*******************************!*\
-  !*** ./data/questionsData.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ([{
-  id: 1023,
-  title: "NextJS: getInitialProps method",
-  body: "I want use NextJS with firebase cloud functions and I am creating a cloud function: import * as functions from 'firebase-functions'; import cors from 'cors'; import express from 'express'; import … = functions.https.onRequest(nextApp); NextJS create a folder with the build of my JS app. The problem is that I can't upload on the cloud the NextJS build folder. How I can include this folder? GitHub Issue => https://github.com/zeit/next.js/issues/2017",
-  like_count: 0,
-  created_at: "2019-01-17T23:05:21.255Z",
-  updated_at: "2019-01-17T23:05:21.255Z",
-  author: {
-    id: 61,
-    full_name: "Noma Jerde",
-    created_at: "2019-01-17T21:46:15.135Z",
-    updated_at: "2019-01-17T21:46:15.135Z"
-  },
-  tags: ["javascript", "reactjs", "nextjs"],
-  answers: []
-}, {
-  id: 898,
-  title: "NextJS: getInitialProps method",
-  body: "I want use NextJS with firebase cloud functions and I am creating a cloud function: import * as functions from 'firebase-functions'; import cors from 'cors'; import express from 'express'; import … = functions.https.onRequest(nextApp); NextJS create a folder with the build of my JS app. The problem is that I can't upload on the cloud the NextJS build folder. How I can include this folder? GitHub Issue => https://github.com/zeit/next.js/issues/2017",
-  like_count: 8,
-  created_at: "2018-12-30T00:00:00.000Z",
-  updated_at: "2018-12-30T00:00:00.000Z",
-  author: {
-    id: 69,
-    full_name: "Valentine Altenwerth",
-    created_at: "2019-01-17T21:46:15.638Z",
-    updated_at: "2019-01-17T21:46:15.638Z"
-  },
-  tags: ["javascript", "reactjs", "nextjs"],
-  answers: [{
-    id: 5089,
-    upvotes: 25,
-    body: "GetInitialProps is usually an async function which is good for asynchronous operations at the server and then it passes data to the page as props. It can run both on the server and on the browser(if you use Link for example). My conclusion would be to use getInitialProps to fetch data when your component acts as a Page, and you want to provide the data as Props.",
-    created_at: "2019-01-17T21:46:18.492Z",
-    updated_at: "2019-01-17T21:46:18.492Z",
-    answerer: {
-      id: 67,
-      full_name: "Kenneth Gottlieb",
-      created_at: "2019-01-17T21:46:15.480Z",
-      updated_at: "2019-01-17T21:46:15.480Z"
-    }
-  }, {
-    id: 5088,
-    upvotes: 15,
-    body: "The unexamined life is not worth living.",
-    created_at: "2019-01-17T21:46:18.491Z",
-    updated_at: "2019-01-17T21:46:18.491Z",
-    answerer: {
-      id: 63,
-      first_name: "Azalee",
-      last_name: "Dietrich",
-      full_name: "Azalee Dietrich",
-      created_at: "2019-01-17T21:46:15.249Z",
-      updated_at: "2019-01-17T21:46:15.249Z"
-    }
-  }, {
-    id: 5087,
-    upvotes: 12,
-    body: "Know how to listen, and you will profit even from those who talk badly.",
-    created_at: "2019-01-17T21:46:18.489Z",
-    updated_at: "2019-01-17T21:46:18.489Z",
-    answerer: {
-      id: 59,
-      first_name: "Jon",
-      last_name: "Snow",
-      full_name: "Jon Snow",
-      created_at: "2019-01-17T21:46:14.923Z",
-      updated_at: "2019-01-17T21:46:14.923Z"
-    }
-  }, {
-    id: 5086,
-    upvotes: 10,
-    body: "Control thy passions lest they take vengence on thee.",
-    created_at: "2019-01-17T21:46:18.488Z",
-    updated_at: "2019-01-17T21:46:18.488Z",
-    answerer: {
-      id: 67,
-      first_name: "Kenneth",
-      last_name: "Gottlieb",
-      full_name: "Kenneth Gottlieb",
-      created_at: "2019-01-17T21:46:15.480Z",
-      updated_at: "2019-01-17T21:46:15.480Z"
-    }
-  }]
-}, {
-  id: 833,
-  title: "Quantifying the matrix won't do anything, we need to index the virtual com interface!",
-  body: "Chuck Norris' programs occupy 150% of CPU, even when they are not executing.",
-  like_count: 2,
-  created_at: "2018-12-21T00:00:00.000Z",
-  updated_at: "2018-12-21T00:00:00.000Z",
-  view_count: 59777,
-  author: {
-    id: 62,
-    first_name: "Rebekah",
-    last_name: "Hane",
-    full_name: "Rebekah Hane",
-    created_at: "2019-01-17T21:46:15.193Z",
-    updated_at: "2019-01-17T21:46:15.193Z"
-  },
-  tags: ["javascript", "reactjs", "nextjs"],
-  answers: [{
-    id: 4630,
-    upvotes: 25,
-    body: "A few vices are sufficient to darken many virtues.",
-    created_at: "2019-01-17T21:46:16.340Z",
-    updated_at: "2019-01-17T21:46:16.340Z",
-    answerer: {
-      id: 66,
-      first_name: "Michael",
-      last_name: "Goldner",
-      full_name: "Michael Goldner",
-      created_at: "2019-01-17T21:46:15.422Z",
-      updated_at: "2019-01-17T21:46:15.422Z"
-    }
-  }, {
-    id: 4629,
-    upvotes: 25,
-    body: "There was never a genius without a tincture of madness.",
-    created_at: "2019-01-17T21:46:16.337Z",
-    updated_at: "2019-01-17T21:46:16.337Z",
-    answerer: {
-      id: 61,
-      first_name: "Noma",
-      last_name: "Jerde",
-      full_name: "Noma Jerde",
-      created_at: "2019-01-17T21:46:15.135Z",
-      updated_at: "2019-01-17T21:46:15.135Z"
-    }
-  }, {
-    id: 4628,
-    upvotes: 25,
-    body: "Love is composed of a single soul inhabiting two bodies.",
-    created_at: "2019-01-17T21:46:16.336Z",
-    updated_at: "2019-01-17T21:46:16.336Z",
-    answerer: {
-      id: 61,
-      first_name: "Noma",
-      last_name: "Jerde",
-      full_name: "Noma Jerde",
-      created_at: "2019-01-17T21:46:15.135Z",
-      updated_at: "2019-01-17T21:46:15.135Z"
-    }
-  }, {
-    id: 4627,
-    upvotes: 25,
-    body: "It is impossible to begin to learn that which one thinks one already knows.",
-    created_at: "2019-01-17T21:46:16.334Z",
-    updated_at: "2019-01-17T21:46:16.334Z",
-    answerer: {
-      id: 64,
-      first_name: "Cleveland",
-      last_name: "Wunsch",
-      full_name: "Cleveland Wunsch",
-      created_at: "2019-01-17T21:46:15.307Z",
-      updated_at: "2019-01-17T21:46:15.307Z"
-    }
-  }, {
-    id: 4626,
-    upvotes: 25,
-    body: "Beware the barrenness of a busy life.",
-    created_at: "2019-01-17T21:46:16.332Z",
-    updated_at: "2019-01-17T21:46:16.332Z",
-    answerer: {
-      id: 62,
-      first_name: "Rebekah",
-      last_name: "Hane",
-      full_name: "Rebekah Hane",
-      created_at: "2019-01-17T21:46:15.193Z",
-      updated_at: "2019-01-17T21:46:15.193Z"
-    }
-  }, {
-    id: 4625,
-    upvotes: 25,
-    body: "Pleasure in the job puts perfection in the work.",
-    created_at: "2019-01-17T21:46:16.331Z",
-    updated_at: "2019-01-17T21:46:16.331Z",
-    answerer: {
-      id: 69,
-      first_name: "Valentine",
-      last_name: "Altenwerth",
-      full_name: "Valentine Altenwerth",
-      created_at: "2019-01-17T21:46:15.638Z",
-      updated_at: "2019-01-17T21:46:15.638Z"
-    }
-  }, {
-    id: 4624,
-    upvotes: 25,
-    body: "Control thy passions lest they take vengence on thee.",
-    created_at: "2019-01-17T21:46:16.329Z",
-    updated_at: "2019-01-17T21:46:16.329Z",
-    answerer: {
-      id: 59,
-      first_name: "Jon",
-      last_name: "Snow",
-      full_name: "Jon Snow",
-      created_at: "2019-01-17T21:46:14.923Z",
-      updated_at: "2019-01-17T21:46:14.923Z"
-    }
-  }, {
-    id: 4623,
-    upvotes: 25,
-    body: "Good habits formed at youth make all the difference.",
-    created_at: "2019-01-17T21:46:16.327Z",
-    updated_at: "2019-01-17T21:46:16.327Z",
-    answerer: {
-      id: 63,
-      first_name: "Azalee",
-      last_name: "Dietrich",
-      full_name: "Azalee Dietrich",
-      created_at: "2019-01-17T21:46:15.249Z",
-      updated_at: "2019-01-17T21:46:15.249Z"
-    }
-  }]
-}]);
 
 /***/ }),
 
@@ -2573,7 +2309,7 @@ function Post(props) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!********************************!*\
   !*** multi ./pages/q/[qid].js ***!
   \********************************/
@@ -2659,17 +2395,6 @@ module.exports = require("react-bootstrap");
 /***/ (function(module, exports) {
 
 module.exports = require("react-bootstrap/Form");
-
-/***/ }),
-
-/***/ "react-bootstrap/Jumbotron":
-/*!********************************************!*\
-  !*** external "react-bootstrap/Jumbotron" ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-bootstrap/Jumbotron");
 
 /***/ }),
 

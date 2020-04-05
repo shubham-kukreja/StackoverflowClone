@@ -9,72 +9,158 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Answer; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_bootstrap_Jumbotron__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Jumbotron */ "./node_modules/react-bootstrap/esm/Jumbotron.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
+
+
+
+
 var _jsxFileName = "C:\\Users\\skukr\\Desktop\\redcarpet\\stackoverflow-react-next\\components\\Answer.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 
-function Answer(props) {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
-    className: "row answer-row",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6,
-      columnNumber: 7
+
+var Answer = /*#__PURE__*/function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Answer, _Component);
+
+  var _super = _createSuper(Answer);
+
+  function Answer() {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Answer);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
     }
-  }, __jsx("div", {
-    className: "col-md-1",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7,
-      columnNumber: 9
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "state", {
+      liked: false
+    });
+
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Answer, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var upvote = function upvote() {
+        var res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function upvote$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this2.setState({
+                  liked: true
+                });
+
+                _this2.props.data.upvotes += 1;
+                _context.next = 4;
+                return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("http://localhost:3000/api/aupvote?id=".concat(_this2.props.questionId)));
+
+              case 4:
+                res = _context.sent;
+
+              case 5:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, null, null, null, Promise);
+      };
+
+      return __jsx(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, __jsx("div", {
+        className: "row answer-row question-answer",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19,
+          columnNumber: 7
+        }
+      }, __jsx("div", {
+        className: "col-md-1",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20,
+          columnNumber: 9
+        }
+      }, this.props.data.upvotes, "\xA0\xA0\xA0", this.state.liked ? __jsx("span", {
+        className: "upvote liked",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23,
+          columnNumber: 13
+        }
+      }, "\u2191") : __jsx("span", {
+        className: "upvote",
+        onClick: upvote,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25,
+          columnNumber: 13
+        }
+      }, "\u2191")), __jsx("div", {
+        className: "col-md-11",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30,
+          columnNumber: 9
+        }
+      }, __jsx("div", {
+        className: "content",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31,
+          columnNumber: 11
+        }
+      }, this.props.data.body), " -", " ", this.props.data.author.full_name)), __jsx("br", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35,
+          columnNumber: 7
+        }
+      }), __jsx("hr", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37,
+          columnNumber: 7
+        }
+      }));
     }
-  }, props.data.upvotes, "\xA0\xA0\xA0", __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 11
-    }
-  }, "\u2191")), __jsx("div", {
-    className: "col-md-11",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 9
-    }
-  }, __jsx("div", {
-    className: "content",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 36
-    }
-  }, props.data.body), " - ", props.data.author.full_name)), __jsx("br", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 7
-    }
-  }), __jsx("hr", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 7
-    }
-  }));
-}
+  }]);
+
+  return Answer;
+}(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Answer);
 
 /***/ }),
 
@@ -210,125 +296,6 @@ function MainNavbar() {
 
 /***/ }),
 
-/***/ "./components/PostAnswer.js":
-/*!**********************************!*\
-  !*** ./components/PostAnswer.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PostAnswer; });
-/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/Form */ "./node_modules/react-bootstrap/esm/Form.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
-
-
-
-
-
-
-var _jsxFileName = "C:\\Users\\skukr\\Desktop\\redcarpet\\stackoverflow-react-next\\components\\PostAnswer.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
-
-function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-
-
-
-
-var PostAnswer = /*#__PURE__*/function (_Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(PostAnswer, _Component);
-
-  var _super = _createSuper(PostAnswer);
-
-  function PostAnswer() {
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, PostAnswer);
-
-    return _super.apply(this, arguments);
-  }
-
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(PostAnswer, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-
-      var handleChange = function handleChange(event) {
-        _this.setState(Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, event.target.name, event.target.value));
-      };
-
-      var handleSubmit = function handleSubmit(event) {
-        event.preventDefault();
-        console.log(_this.state);
-      };
-
-      return __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        onSubmit: handleSubmit,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17,
-          columnNumber: 7
-        }
-      }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_7__["default"].Group, {
-        controlId: "exampleForm.ControlTextarea1",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 18,
-          columnNumber: 9
-        }
-      }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_7__["default"].Label, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 19,
-          columnNumber: 11
-        }
-      }, "Answer This Question"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_7__["default"].Control, {
-        as: "textarea",
-        rows: "2",
-        name: "body",
-        onChange: handleChange,
-        style: {
-          'height': '40px'
-        },
-        required: true,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 20,
-          columnNumber: 11
-        }
-      })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["Button"], {
-        type: "submit",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29,
-          columnNumber: 9
-        }
-      }, "Submit"));
-    }
-  }]);
-
-  return PostAnswer;
-}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
-
-
-
-/***/ }),
-
 /***/ "./components/QuestionDetail.js":
 /*!**************************************!*\
   !*** ./components/QuestionDetail.js ***!
@@ -350,11 +317,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap/Spinner */ "./node_modules/react-bootstrap/esm/Spinner.js");
-/* harmony import */ var _data_questionsData__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../data/questionsData */ "./data/questionsData.js");
-/* harmony import */ var _Answer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Answer */ "./components/Answer.js");
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-bootstrap/Form */ "./node_modules/react-bootstrap/esm/Form.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
-/* harmony import */ var _PostAnswer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./PostAnswer */ "./components/PostAnswer.js");
+/* harmony import */ var _Answer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Answer */ "./components/Answer.js");
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-bootstrap/Form */ "./node_modules/react-bootstrap/esm/Form.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 
 
 
@@ -369,8 +334,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-
 
 
 
@@ -395,10 +358,10 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
     _this = _super.call.apply(_super, [this].concat(args));
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "state", {
-      data: _this.props.data,
+      data: null,
       answerCount: 0,
       liked: false,
-      body: null
+      answerBody: null
     });
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "updateDetails", function _callee() {
@@ -458,7 +421,8 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
       var _this$state = this.state,
           data = _this$state.data,
           answerCount = _this$state.answerCount,
-          liked = _this$state.liked;
+          liked = _this$state.liked,
+          answerBody = _this$state.answerBody;
 
       var upvote = function upvote() {
         var res;
@@ -490,23 +454,36 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
       };
 
       var handleSubmit = function handleSubmit(event) {
-        var res;
+        var obj, newData, res;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function handleSubmit$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
                 event.preventDefault();
-                console.log('clicked');
-                _context4.next = 4;
+                obj = {
+                  author: {
+                    full_name: "Shubham Kukreja"
+                  },
+                  body: answerBody,
+                  upvotes: 0
+                };
+                newData = data;
+                newData.answers.push(obj);
+
+                _this2.setState({
+                  data: newData
+                });
+
+                _context4.next = 7;
                 return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("http://localhost:3000/api/a?id=".concat(_this2.props.questionId), {
                   method: "post",
-                  body: JSON.stringify(_this2.state.body)
+                  body: JSON.stringify(obj)
                 }));
 
-              case 4:
+              case 7:
                 res = _context4.sent;
 
-              case 5:
+              case 8:
               case "end":
                 return _context4.stop();
             }
@@ -519,14 +496,14 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57,
+          lineNumber: 69,
           columnNumber: 13
         }
       }, data.title), __jsx("hr", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58,
+          lineNumber: 70,
           columnNumber: 13
         }
       }), __jsx("h5", {
@@ -534,22 +511,22 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59,
+          lineNumber: 71,
           columnNumber: 13
         }
       }, data.body), __jsx("hr", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60,
+          lineNumber: 72,
           columnNumber: 13
         }
       }), __jsx("p", {
-        className: "lead",
+        className: "lead question-stats",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61,
+          lineNumber: 73,
           columnNumber: 13
         }
       }, answerCount, " Answers \xA0\xA0\xA0\xA0", liked ? __jsx("span", {
@@ -557,7 +534,7 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64,
+          lineNumber: 76,
           columnNumber: 17
         }
       }, "\u2191") : __jsx("span", {
@@ -566,83 +543,97 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66,
+          lineNumber: 78,
           columnNumber: 17
         }
-      }, "\u2191"), "\xA0Likes ", data.like_count), __jsx("hr", {
+      }, "\u2191"), "\xA0Likes ", data.like_count, "\xA0\xA0\xA0\xA0 - ", data.author.full_name), __jsx("hr", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72,
+          lineNumber: 84,
           columnNumber: 13
         }
       }), __jsx("br", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73,
+          lineNumber: 85,
           columnNumber: 13
         }
       }), data.answers.map(function (ans) {
-        return __jsx(_Answer__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        return __jsx(_Answer__WEBPACK_IMPORTED_MODULE_10__["default"], {
           data: ans,
-          key: ans.id,
+          key: ans.body,
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75,
+            lineNumber: 87,
             columnNumber: 15
           }
         });
-      }), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_11__["default"], {
         onSubmit: handleSubmit,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77,
+          lineNumber: 89,
           columnNumber: 13
         }
-      }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_12__["default"].Group, {
+      }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_11__["default"].Group, {
         controlId: "exampleForm.ControlTextarea1",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78,
+          lineNumber: 90,
           columnNumber: 15
         }
-      }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_12__["default"].Label, {
+      }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_11__["default"].Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79,
+          lineNumber: 91,
           columnNumber: 17
         }
-      }, "Write Answer"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_12__["default"].Control, {
+      }, "Write Answer"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_11__["default"].Control, {
         as: "textarea",
         rows: "6",
-        name: "body",
+        name: "answerBody",
         onChange: handleChange,
         required: true,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80,
+          lineNumber: 92,
           columnNumber: 17
         }
-      })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_13__["Button"], {
+      })), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_12__["Button"], {
         type: "submit",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88,
+          lineNumber: 100,
           columnNumber: 15
         }
-      }, "Post Question"))) : __jsx("div", {
+      }, "Post Answer")), __jsx("br", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102,
+          columnNumber: 13
+        }
+      }), __jsx("br", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102,
+          columnNumber: 18
+        }
+      })) : __jsx("div", {
         className: "center text-center",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92,
+          lineNumber: 105,
           columnNumber: 11
         }
       }, __jsx(react_bootstrap_Spinner__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -650,7 +641,7 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93,
+          lineNumber: 106,
           columnNumber: 13
         }
       })));
@@ -661,233 +652,6 @@ var QuestionDetail = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (QuestionDetail);
-
-/***/ }),
-
-/***/ "./data/questionsData.js":
-/*!*******************************!*\
-  !*** ./data/questionsData.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ([{
-  id: 1023,
-  title: "NextJS: getInitialProps method",
-  body: "I want use NextJS with firebase cloud functions and I am creating a cloud function: import * as functions from 'firebase-functions'; import cors from 'cors'; import express from 'express'; import … = functions.https.onRequest(nextApp); NextJS create a folder with the build of my JS app. The problem is that I can't upload on the cloud the NextJS build folder. How I can include this folder? GitHub Issue => https://github.com/zeit/next.js/issues/2017",
-  like_count: 0,
-  created_at: "2019-01-17T23:05:21.255Z",
-  updated_at: "2019-01-17T23:05:21.255Z",
-  author: {
-    id: 61,
-    full_name: "Noma Jerde",
-    created_at: "2019-01-17T21:46:15.135Z",
-    updated_at: "2019-01-17T21:46:15.135Z"
-  },
-  tags: ["javascript", "reactjs", "nextjs"],
-  answers: []
-}, {
-  id: 898,
-  title: "NextJS: getInitialProps method",
-  body: "I want use NextJS with firebase cloud functions and I am creating a cloud function: import * as functions from 'firebase-functions'; import cors from 'cors'; import express from 'express'; import … = functions.https.onRequest(nextApp); NextJS create a folder with the build of my JS app. The problem is that I can't upload on the cloud the NextJS build folder. How I can include this folder? GitHub Issue => https://github.com/zeit/next.js/issues/2017",
-  like_count: 8,
-  created_at: "2018-12-30T00:00:00.000Z",
-  updated_at: "2018-12-30T00:00:00.000Z",
-  author: {
-    id: 69,
-    full_name: "Valentine Altenwerth",
-    created_at: "2019-01-17T21:46:15.638Z",
-    updated_at: "2019-01-17T21:46:15.638Z"
-  },
-  tags: ["javascript", "reactjs", "nextjs"],
-  answers: [{
-    id: 5089,
-    upvotes: 25,
-    body: "GetInitialProps is usually an async function which is good for asynchronous operations at the server and then it passes data to the page as props. It can run both on the server and on the browser(if you use Link for example). My conclusion would be to use getInitialProps to fetch data when your component acts as a Page, and you want to provide the data as Props.",
-    created_at: "2019-01-17T21:46:18.492Z",
-    updated_at: "2019-01-17T21:46:18.492Z",
-    answerer: {
-      id: 67,
-      full_name: "Kenneth Gottlieb",
-      created_at: "2019-01-17T21:46:15.480Z",
-      updated_at: "2019-01-17T21:46:15.480Z"
-    }
-  }, {
-    id: 5088,
-    upvotes: 15,
-    body: "The unexamined life is not worth living.",
-    created_at: "2019-01-17T21:46:18.491Z",
-    updated_at: "2019-01-17T21:46:18.491Z",
-    answerer: {
-      id: 63,
-      first_name: "Azalee",
-      last_name: "Dietrich",
-      full_name: "Azalee Dietrich",
-      created_at: "2019-01-17T21:46:15.249Z",
-      updated_at: "2019-01-17T21:46:15.249Z"
-    }
-  }, {
-    id: 5087,
-    upvotes: 12,
-    body: "Know how to listen, and you will profit even from those who talk badly.",
-    created_at: "2019-01-17T21:46:18.489Z",
-    updated_at: "2019-01-17T21:46:18.489Z",
-    answerer: {
-      id: 59,
-      first_name: "Jon",
-      last_name: "Snow",
-      full_name: "Jon Snow",
-      created_at: "2019-01-17T21:46:14.923Z",
-      updated_at: "2019-01-17T21:46:14.923Z"
-    }
-  }, {
-    id: 5086,
-    upvotes: 10,
-    body: "Control thy passions lest they take vengence on thee.",
-    created_at: "2019-01-17T21:46:18.488Z",
-    updated_at: "2019-01-17T21:46:18.488Z",
-    answerer: {
-      id: 67,
-      first_name: "Kenneth",
-      last_name: "Gottlieb",
-      full_name: "Kenneth Gottlieb",
-      created_at: "2019-01-17T21:46:15.480Z",
-      updated_at: "2019-01-17T21:46:15.480Z"
-    }
-  }]
-}, {
-  id: 833,
-  title: "Quantifying the matrix won't do anything, we need to index the virtual com interface!",
-  body: "Chuck Norris' programs occupy 150% of CPU, even when they are not executing.",
-  like_count: 2,
-  created_at: "2018-12-21T00:00:00.000Z",
-  updated_at: "2018-12-21T00:00:00.000Z",
-  view_count: 59777,
-  author: {
-    id: 62,
-    first_name: "Rebekah",
-    last_name: "Hane",
-    full_name: "Rebekah Hane",
-    created_at: "2019-01-17T21:46:15.193Z",
-    updated_at: "2019-01-17T21:46:15.193Z"
-  },
-  tags: ["javascript", "reactjs", "nextjs"],
-  answers: [{
-    id: 4630,
-    upvotes: 25,
-    body: "A few vices are sufficient to darken many virtues.",
-    created_at: "2019-01-17T21:46:16.340Z",
-    updated_at: "2019-01-17T21:46:16.340Z",
-    answerer: {
-      id: 66,
-      first_name: "Michael",
-      last_name: "Goldner",
-      full_name: "Michael Goldner",
-      created_at: "2019-01-17T21:46:15.422Z",
-      updated_at: "2019-01-17T21:46:15.422Z"
-    }
-  }, {
-    id: 4629,
-    upvotes: 25,
-    body: "There was never a genius without a tincture of madness.",
-    created_at: "2019-01-17T21:46:16.337Z",
-    updated_at: "2019-01-17T21:46:16.337Z",
-    answerer: {
-      id: 61,
-      first_name: "Noma",
-      last_name: "Jerde",
-      full_name: "Noma Jerde",
-      created_at: "2019-01-17T21:46:15.135Z",
-      updated_at: "2019-01-17T21:46:15.135Z"
-    }
-  }, {
-    id: 4628,
-    upvotes: 25,
-    body: "Love is composed of a single soul inhabiting two bodies.",
-    created_at: "2019-01-17T21:46:16.336Z",
-    updated_at: "2019-01-17T21:46:16.336Z",
-    answerer: {
-      id: 61,
-      first_name: "Noma",
-      last_name: "Jerde",
-      full_name: "Noma Jerde",
-      created_at: "2019-01-17T21:46:15.135Z",
-      updated_at: "2019-01-17T21:46:15.135Z"
-    }
-  }, {
-    id: 4627,
-    upvotes: 25,
-    body: "It is impossible to begin to learn that which one thinks one already knows.",
-    created_at: "2019-01-17T21:46:16.334Z",
-    updated_at: "2019-01-17T21:46:16.334Z",
-    answerer: {
-      id: 64,
-      first_name: "Cleveland",
-      last_name: "Wunsch",
-      full_name: "Cleveland Wunsch",
-      created_at: "2019-01-17T21:46:15.307Z",
-      updated_at: "2019-01-17T21:46:15.307Z"
-    }
-  }, {
-    id: 4626,
-    upvotes: 25,
-    body: "Beware the barrenness of a busy life.",
-    created_at: "2019-01-17T21:46:16.332Z",
-    updated_at: "2019-01-17T21:46:16.332Z",
-    answerer: {
-      id: 62,
-      first_name: "Rebekah",
-      last_name: "Hane",
-      full_name: "Rebekah Hane",
-      created_at: "2019-01-17T21:46:15.193Z",
-      updated_at: "2019-01-17T21:46:15.193Z"
-    }
-  }, {
-    id: 4625,
-    upvotes: 25,
-    body: "Pleasure in the job puts perfection in the work.",
-    created_at: "2019-01-17T21:46:16.331Z",
-    updated_at: "2019-01-17T21:46:16.331Z",
-    answerer: {
-      id: 69,
-      first_name: "Valentine",
-      last_name: "Altenwerth",
-      full_name: "Valentine Altenwerth",
-      created_at: "2019-01-17T21:46:15.638Z",
-      updated_at: "2019-01-17T21:46:15.638Z"
-    }
-  }, {
-    id: 4624,
-    upvotes: 25,
-    body: "Control thy passions lest they take vengence on thee.",
-    created_at: "2019-01-17T21:46:16.329Z",
-    updated_at: "2019-01-17T21:46:16.329Z",
-    answerer: {
-      id: 59,
-      first_name: "Jon",
-      last_name: "Snow",
-      full_name: "Jon Snow",
-      created_at: "2019-01-17T21:46:14.923Z",
-      updated_at: "2019-01-17T21:46:14.923Z"
-    }
-  }, {
-    id: 4623,
-    upvotes: 25,
-    body: "Good habits formed at youth make all the difference.",
-    created_at: "2019-01-17T21:46:16.327Z",
-    updated_at: "2019-01-17T21:46:16.327Z",
-    answerer: {
-      id: 63,
-      first_name: "Azalee",
-      last_name: "Dietrich",
-      full_name: "Azalee Dietrich",
-      created_at: "2019-01-17T21:46:15.249Z",
-      updated_at: "2019-01-17T21:46:15.249Z"
-    }
-  }]
-}]);
 
 /***/ }),
 
@@ -20673,7 +20437,7 @@ function Post(props) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!******************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fq%2F%5Bqid%5D&absolutePagePath=C%3A%5CUsers%5Cskukr%5CDesktop%5Credcarpet%5Cstackoverflow-react-next%5Cpages%5Cq%5C%5Bqid%5D.js ***!
   \******************************************************************************************************************************************************************************/
@@ -20696,5 +20460,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[qid].js.map

@@ -4,18 +4,8 @@ import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
 import dynamic from "next/dynamic";
-import { server } from '../config';
+import { server } from "../config";
 import Router from "next/router";
-
-const CKEditor = dynamic(() => import("../components/CKEditor"), {
-  ssr: false,
-});
-const ClassicEditor = dynamic(
-  () => import("@ckeditor/ckeditor5-build-classic"),
-  {
-    ssr: false,
-  }
-);
 
 export default class AddQuestion extends Component {
   state = {
@@ -33,7 +23,9 @@ export default class AddQuestion extends Component {
       });
     };
     const handleChangeEditor = (event) => {
-      console.log(event);
+      this.setState({
+        body: event,
+      });
     };
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -75,7 +67,7 @@ export default class AddQuestion extends Component {
               required
             />
           </Form.Group>
-          <Form.Group controlId="exampleForm.ControlInput1">
+          <Form.Group controlId="exampleForm.ControlInput2">
             <Form.Label>Question Title</Form.Label>
             <Form.Control
               type="text"
@@ -86,17 +78,12 @@ export default class AddQuestion extends Component {
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>Body</Form.Label>
-            {/* <CKEditor
-                data={this.state.title}
-                name="body"
-                onChange={handleChangeEditor}
-                required
-              /> */}
-            <Form.Control
-              as="textarea"
-              rows="6"
-              name="body"
-              onChange={handleChange}
+            <QuillNoSSRWrapper
+              modules={modules}
+              formats={formats}
+              theme="snow"
+              className="text-editor"
+              onChange={handleChangeEditor}
               required
             />
           </Form.Group>
@@ -119,3 +106,46 @@ export default class AddQuestion extends Component {
     );
   }
 }
+
+// QUILL EDITOR CONFIG STARTS HERE
+const QuillNoSSRWrapper = dynamic(import("react-quill"), {
+  ssr: false,
+  loading: () => <p>Loading ...</p>,
+});
+
+const modules = {
+  toolbar: [
+    [{ header: "1" }, { header: "2" }, { font: [] }],
+    [{ size: [] }],
+    ["bold", "italic", "underline", "strike", "blockquote"],
+    [
+      { list: "ordered" },
+      { list: "bullet" },
+      { indent: "-1" },
+      { indent: "+1" },
+    ],
+    ["code"],
+    ["link"],
+    ["clean"],
+  ],
+  clipboard: {
+    matchVisual: false,
+  },
+};
+
+const formats = [
+  "header",
+  "font",
+  "size",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "blockquote",
+  "list",
+  "bullet",
+  "indent",
+  "link",
+  "code"
+];
+// QUILL EDITOR CONFIG ENDS HERE

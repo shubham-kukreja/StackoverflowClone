@@ -3,7 +3,7 @@ import Spinner from "react-bootstrap/Spinner";
 import Answer from "./Answer";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
-import { server } from '../config';
+import { server } from "../config";
 
 class QuestionDetail extends Component {
   state = {
@@ -56,13 +56,10 @@ class QuestionDetail extends Component {
       this.setState({
         data: newData,
       });
-      const res = await fetch(
-        `${server}/api/a?id=${this.props.questionId}`,
-        {
-          method: "post",
-          body: JSON.stringify(obj),
-        }
-      );
+      const res = await fetch(`${server}/api/a?id=${this.props.questionId}`, {
+        method: "post",
+        body: JSON.stringify(obj),
+      });
     };
     return (
       <>
@@ -70,7 +67,12 @@ class QuestionDetail extends Component {
           <>
             <h1 className="question-heading">{data.title}</h1>
             <hr />
-            <h5 className="question-body">{data.body}</h5>
+            <h5
+              className="question-body"
+              dangerouslySetInnerHTML={{
+                __html: data.body,
+              }}
+            ></h5>
             <hr />
             <p className="lead question-stats">
               {answerCount} Answers &nbsp;&nbsp;&nbsp;&nbsp;
@@ -87,7 +89,7 @@ class QuestionDetail extends Component {
             <hr />
             <br />
             {data.answers.map((ans, index) => (
-              <Answer data={ans} key={ans.body} index={index}/>
+              <Answer data={ans} key={ans.body} index={index} />
             ))}
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="exampleForm.ControlInput1">

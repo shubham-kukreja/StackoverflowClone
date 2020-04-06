@@ -13,9 +13,13 @@ export default function QuestionCard(props) {
       <Card.Body>
         <div className="card-col-2">
           <Card.Title>{props.question.title}</Card.Title>
-          <Card.Text>{props.question.body} </Card.Text>
+          <div className="card-text"
+            dangerouslySetInnerHTML={{
+              __html: props.question.body,
+            }}
+          ></div>
           <PostLink className="post-link" qid={props.question._id}>
-            View Details > 
+            View Details >
           </PostLink>
         </div>
       </Card.Body>

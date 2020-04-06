@@ -51,6 +51,7 @@ body {
 .question-heading {
   margin-bottom: 25px;
   animation: fadeIn 1s;
+  text-align: left!important;
 }
 .question-body {
   font-weight: 400;
@@ -76,7 +77,6 @@ body {
   cursor: not-allowed;
   transition: all ease-in-out 0.5s;
 }
-
 /* Question Detail Ends Here */
 /* Answer Starts Here */
 /* Answer Ends Here */

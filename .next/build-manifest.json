@@ -12,10 +12,6 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/AddQuestion": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/_app": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
@@ -29,10 +25,6 @@
       "static/runtime/polyfills.js.map"
     ],
     "/index": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/q/[qid]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

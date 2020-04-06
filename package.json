@@ -24,6 +24,7 @@
     "mongodb": "^3.5.5",
     "next": "^9.3.4",
     "next-connect": "^0.6.1",
+    "next-pwa": "^2.3.2",
     "next-session": "^3.0.1",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",

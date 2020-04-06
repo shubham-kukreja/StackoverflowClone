@@ -31,10 +31,6 @@
     "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/q/[qid]": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }

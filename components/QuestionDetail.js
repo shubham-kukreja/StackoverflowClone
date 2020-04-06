@@ -9,8 +9,8 @@ class QuestionDetail extends Component {
     data: null,
     answerCount: 0,
     liked: false,
-    answerBody: '',
-    author : ''
+    answerBody: "",
+    author: "",
   };
   async componentDidMount() {
     this.updateDetails();
@@ -26,7 +26,7 @@ class QuestionDetail extends Component {
     });
   };
   render() {
-    let { data, answerCount, liked, answerBody ,author } = this.state;
+    let { data, answerCount, liked, answerBody, author } = this.state;
     const upvote = async () => {
       this.setState({
         liked: true,
@@ -45,7 +45,7 @@ class QuestionDetail extends Component {
       event.preventDefault();
       let obj = {
         author: {
-          full_name : author
+          full_name: author,
         },
         body: answerBody,
         upvotes: 0,
@@ -85,8 +85,8 @@ class QuestionDetail extends Component {
             </p>
             <hr />
             <br />
-            {data.answers.map((ans) => (
-              <Answer data={ans} key={ans.body} />
+            {data.answers.map((ans, index) => (
+              <Answer data={ans} key={ans.body} index={index}/>
             ))}
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="exampleForm.ControlInput1">

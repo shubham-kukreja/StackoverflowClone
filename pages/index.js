@@ -6,6 +6,7 @@ import { Button } from "react-bootstrap";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import Spinner from "react-bootstrap/Spinner";
+import Search from "../components/Search";
 
 class Index extends Component {
   state = {
@@ -14,6 +15,7 @@ class Index extends Component {
   render() {
     return (
       <Layout>
+        <Search/>
         {this.state.questions ? (
           <>
             <Button type="submit" className="mb-2 floating-btn">

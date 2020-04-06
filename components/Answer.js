@@ -11,7 +11,7 @@ class Answer extends Component {
       });
       this.props.data.upvotes += 1;
       const res = await fetch(
-        `http://localhost:3000/api/aupvote?id=${this.props.questionId}`
+        `http://localhost:3000/api/aupvote?index=${this.props.index}`
       );
     };
     return (

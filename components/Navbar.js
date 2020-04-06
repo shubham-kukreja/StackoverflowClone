@@ -15,7 +15,11 @@ export default function MainNavbar() {
       </Head>
       <Navbar bg="dark" variant="dark">
         <div className="container">
-          <Navbar.Brand><Link href="/"><a className="nav-link text-white">StackOverflow</a></Link></Navbar.Brand>
+          <Navbar.Brand>
+            <Link href="/">
+              <a className="nav-link text-white">StackOverflow</a>
+            </Link>
+          </Navbar.Brand>
         </div>
       </Navbar>
     </>

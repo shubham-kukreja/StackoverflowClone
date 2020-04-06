@@ -31,10 +31,10 @@ export default class extends Document {
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/icons/apple-touch-icon.png"
+            href="/icons/favicon.png"
           />
           <link rel="manifest" href="manifest.json" />
-          <link rel="shortcut icon" href="/icons/favicon.ico" />
+          <link rel="shortcut icon" href="/icons/favicon.png" />
           <style>{`
             html, body, #__next {
               height: 100%;

@@ -1172,7 +1172,7 @@ const APP_DESCRIPTION = "StackOverflow PWA";
     }), __jsx("link", {
       rel: "apple-touch-icon",
       sizes: "180x180",
-      href: "/icons/apple-touch-icon.png",
+      href: "/icons/favicon.png",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -1190,7 +1190,7 @@ const APP_DESCRIPTION = "StackOverflow PWA";
       }
     }), __jsx("link", {
       rel: "shortcut icon",
-      href: "/icons/favicon.ico",
+      href: "/icons/favicon.png",
       __self: this,
       __source: {
         fileName: _jsxFileName,

@@ -79,7 +79,6 @@ body {
 
 /* Question Detail Ends Here */
 /* Answer Starts Here */
-
 /* Answer Ends Here */
 /* Animations Start Here */
 /* Animations Start Here */
@@ -94,3 +93,13 @@ body {
   }
 }
 /* Animations Ends Here */
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+  .floating-btn {
+    font-size: 1rem;
+  }
+  .btn-outline-primary {
+    margin-top: 10px;
+  }
+}
+/* Media Queries */

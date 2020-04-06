@@ -40,7 +40,7 @@ export default class Search extends Component {
           <FormControl
             type="text"
             placeholder="Search"
-            className="mr-sm-2"
+            className="mr-sm-2 search-box"
             onChange={handleOnInputChange}
           />
           <Button variant="outline-primary" type="submit">

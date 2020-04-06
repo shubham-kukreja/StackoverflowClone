@@ -16,9 +16,17 @@ export default function MainNavbar() {
       <Navbar bg="dark" variant="dark">
         <div className="container">
           <Navbar.Brand>
-            <Link href="/">
+            <img
+              alt=""
+              src="icons/favicon.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{" "}
+            Stakoverflow Clone
+            {/* <Link href="/">
               <a className="nav-link text-white">StackOverflow</a>
-            </Link>
+            </Link> */}
           </Navbar.Brand>
         </div>
       </Navbar>

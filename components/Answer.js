@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { server } from '../config';
 
 class Answer extends Component {
   state = {
@@ -11,7 +12,7 @@ class Answer extends Component {
       });
       this.props.data.upvotes += 1;
       const res = await fetch(
-        `http://localhost:3000/api/aupvote?index=${this.props.index}`
+        `${server}/api/aupvote?body=${this.props.data.body}`
       );
     };
     return (

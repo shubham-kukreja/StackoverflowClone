@@ -7,6 +7,7 @@ import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import Spinner from "react-bootstrap/Spinner";
 import Search from "../components/Search";
+import { server } from '../config';
 
 class Index extends Component {
   state = {
@@ -15,7 +16,7 @@ class Index extends Component {
   render() {
     return (
       <Layout>
-        <Search/>
+        <Search />
         {this.state.questions ? (
           <>
             <Button type="submit" className="mb-2 floating-btn">
@@ -37,7 +38,7 @@ class Index extends Component {
   }
 }
 Index.getInitialProps = async () => {
-  const res = await fetch("http://localhost:3000/api/q");
+  const res = await fetch(`${server}/api/q`);
   const json = await res.json();
   return { data: json };
 };

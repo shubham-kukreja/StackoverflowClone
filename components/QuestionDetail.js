@@ -3,6 +3,7 @@ import Spinner from "react-bootstrap/Spinner";
 import Answer from "./Answer";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
+import { server } from '../config';
 
 class QuestionDetail extends Component {
   state = {
@@ -17,7 +18,7 @@ class QuestionDetail extends Component {
   }
   updateDetails = async () => {
     const res = await fetch(
-      `http://localhost:3000/api/qdetail?id=${this.props.questionId}`
+      `${server}/api/qdetail?id=${this.props.questionId}`
     );
     const json = await res.json();
     this.setState({
@@ -33,7 +34,7 @@ class QuestionDetail extends Component {
       });
       data.like_count += 1;
       const res = await fetch(
-        `http://localhost:3000/api/qupvote?id=${this.props.questionId}`
+        `${server}/api/qupvote?id=${this.props.questionId}`
       );
     };
     const handleChange = (event) => {
@@ -56,7 +57,7 @@ class QuestionDetail extends Component {
         data: newData,
       });
       const res = await fetch(
-        `http://localhost:3000/api/a?id=${this.props.questionId}`,
+        `${server}/api/a?id=${this.props.questionId}`,
         {
           method: "post",
           body: JSON.stringify(obj),

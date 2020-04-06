@@ -4,6 +4,7 @@ import FormControl from "react-bootstrap/FormControl";
 import { Button } from "react-bootstrap";
 import QuestionCard from "../components/QuestionCard";
 import Spinner from "react-bootstrap/Spinner";
+import {server} from '../config'
 
 export default class Search extends Component {
   state = {
@@ -23,7 +24,7 @@ export default class Search extends Component {
         loading: true,
       });
       const res = await fetch(
-        `http://localhost:3000/api/search?query=${this.state.query}`
+        `${server}/api/search?query=${this.state.query}`
       );
       const data = await res.json();
       console.log(data);

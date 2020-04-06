@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
 import dynamic from "next/dynamic";
+import { server } from '../config';
 import Router from "next/router";
 
 const CKEditor = dynamic(() => import("../components/CKEditor"), {
@@ -47,7 +48,7 @@ export default class AddQuestion extends Component {
       this.setState({
         loading: false,
       });
-      const res = await fetch("http://localhost:3000/api/q", {
+      const res = await fetch(`${server}/api/q`, {
         method: "post",
         body: JSON.stringify(obj),
       });

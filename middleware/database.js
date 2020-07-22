@@ -2,7 +2,7 @@ import { MongoClient } from "mongodb";
 import nextConnect from "next-connect";
 
 const client = new MongoClient(
-  "mongodb+srv://skukreja:vijan5562@cluster0-f1muf.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true",
+  "your database",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
